@@ -10,7 +10,7 @@ body{
                          'section section section section'
                          'footer footer footer footer';
 grid-template-columns: 25vw 25vw 25vw 25vw;
-grid-template-rows: 12vh 10vh 40vh 140vh 10vh;
+grid-template-rows: 12vh 5vh 40vh 145vh 10vh;
 margin: 0;
 }
 
@@ -35,6 +35,7 @@ margin: 0;
 } 
 
 .menu{
+    background-color: #cfbbc7;
     grid-area: navmenu;
     display: inline;
 }
@@ -133,6 +134,8 @@ header{
     background-image: url('../images/banner.jpg');
     grid-area: header; 
     background-repeat: no-repeat;
+    margin-left: -15px;
+    
 }
 
 @media(min-width:710px){

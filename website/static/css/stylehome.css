@@ -15,7 +15,7 @@ a h4:hover{
     background-color: #e3dfe6;
 }
 .barra{
-    background-color:  #6e448317;
+    background-color: #f5f1f7  ;
     height: 100%;
     width: 200px;
     position: absolute;
@@ -23,7 +23,7 @@ a h4:hover{
     left: -200px;
 }
 .bloco-desafios-gerais{
-    background-color: #f9f4f4;
+    background-color: #97979729;
      margin: 10px;
      padding: 5px 5px; 
     justify-content: space-between;
@@ -80,7 +80,7 @@ a h4:hover{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
 }
 .desafios-criados{
-    background-color: #f9f4f4;
+    background-color:#97979729;
     margin: 10px;
     padding: 5px 5px; 
     justify-content: space-between;
@@ -247,7 +247,7 @@ background-color: #9d94a1;
         box-shadow:none;
     }
     .desafios-criados{
-        background-color: #f9f4f4;
+        background-color: #97979729;
         margin: 10px;
         padding: 5px 5px; 
         display: flex;
