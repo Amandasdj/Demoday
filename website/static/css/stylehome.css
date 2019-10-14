@@ -1,4 +1,5 @@
-*{
+*{ margin:0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -49,7 +50,7 @@ a h4:hover{
 .cabecalho{
    
    justify-content: space-between;
-   margin-left: 45%;
+   margin-left: 30%;
    color: #704483;
    font-family: 'Oswald', sans-serif;
   
@@ -141,6 +142,7 @@ background-color: #9d94a1;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     
+    
   
   }
 
@@ -152,7 +154,7 @@ background-color: #9d94a1;
 } 
 .nav-base img{
     margin-left: 2px;
-    width: 20px;
+    width: 60px;
     
 }
 .nav-base p{
@@ -256,5 +258,11 @@ background-color: #9d94a1;
       font-size:20px;
     
     }
-
+    .msg{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin-left: 18%;
+        
+      
+      }
 }
