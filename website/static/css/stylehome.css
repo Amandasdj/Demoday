@@ -330,3 +330,9 @@ background-color: #9d94a1;
             margin-left: 43vw;
         }
     } 
+
+    @media (min-width:1024px){
+        .cabecalho{
+            margin-left: 45vw;
+        }
+    } 
