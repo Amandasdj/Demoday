@@ -23,7 +23,7 @@ a h4:hover{
     left: -200px;
 }
 .bloco-desafios-gerais{
-    background-color: #97979729;
+    background-color: #d5bfcb3d;
      margin: 10px;
      padding: 5px 5px; 
     justify-content: space-between;
@@ -35,7 +35,7 @@ a h4:hover{
 
 }
 .bloco-desafios-respondidos{
-    background-color: #97979729;
+    background-color: #d5bfcb3d;
      margin: 10px;
      padding: 5px 5px; 
      justify-content: space-between;
@@ -80,7 +80,7 @@ a h4:hover{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
 }
 .desafios-criados{
-    background-color:#97979729;
+    background-color:#d5bfcb3d;
     margin: 10px;
     padding: 5px 5px; 
     justify-content: space-between;
