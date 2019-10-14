@@ -1,6 +1,14 @@
-{% extends "base.html" %}
+
 {% load staticfiles %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
     <div style="margin: 40px;">
         <h1>{{ perfil.user }}</h1>
         <h3>{{ perfil.nome}} {{perfil.sobrenome}}</h3>
@@ -18,8 +26,11 @@
                 <p style="font-size:7pt;">{{ desafio.criacao }}</p>
                 <a href="responder/{{ perfil.id }}/{{ desafio.id }}">Responder</a>
                 <a href="/like/d/{{ perfil.id }}/{{ desafio.id }}" style="font-size: 10pt;">Dar like - {{ desafio.likes }}</a>
-            </div>
-        {% endfor %}
+            </div> 
+             {% endfor %}
     </div>
+</body>
+</html>
+    
+      
 
-{% endblock %}

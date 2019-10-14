@@ -1,16 +1,37 @@
 body{
     display: grid;
     grid-template-areas: 'navbar navbar navbar navbar'
+                          'navmenu navmenu navmenu navmenu '
                           'header header header header'
                          'section section section section'
                          'footer footer footer footer';
 grid-template-columns: 25vw 25vw 25vw 25vw;
-grid-template-rows: 10vh 40vh 140vh 10vh;
+grid-template-rows: 10vh 10vh 40vh 140vh 10vh;
 margin: 0;
 }
 
-nav{
+.nav-base { align-items: center;
+    background-color: #6f4584;
+    display: flex;
+    justify-content: space-between;
     grid-area: navbar;
+} 
+.nav-base img{
+    margin-left: 2px;
+    width: 60px;
+   
+    
+}
+.nav-base p{
+    color: white;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 35px;
+    margin-right:35px;
+    
+} 
+
+.menu{
+    grid-area: navmenu;
     display: inline;
 }
 
@@ -21,17 +42,17 @@ header{
 }
 
 /* Inicio Menu */
-header .menu a{
+.menu a{
     color:#704483;
     text-decoration: none;
     font-family: 'Oswald',sans-serif;
 }
 
-header .menu a:hover{
+.menu a:hover{
      background-color: #e3dfe6;
 }
 
-header .menu .barra{
+ .menu .barra{
     background-color:#f9f4f4;
     height: 100%;
     width: 200px;
@@ -40,30 +61,30 @@ header .menu .barra{
     left: -200px;
 }
 
-header .menu #check{
+.menu #check{
     display:none;
 }
 
-header .menu #check:checked ~ .barra{
+ .menu #check:checked ~ .barra{
     transform: translateX(200px);
 }
 
-header .menu-index #icone{
+ .menu-index #icone{
     cursor: pointer;
     padding: 15px;
     position: absolute;
     z-index:1;
 }
 
-header .menu label img{
+ .menu label img{
     width: 30px;
 }
 
-header .menu label label{
+ .menu label label{
     font-family: 'Oswald' , sans-serif;
     font-size: 15px;
 }
-header .menu .link{
+.menu .link{
     background-color: #d5bfcb;
     padding: 20px;
     font-size: 12px;
@@ -72,17 +93,17 @@ header .menu .link{
     border-bottom: 2px solid #f9f4f4;
 }
 
-header .menu .link:hover{
+ .menu .link:hover{
     background-color:#9d94a1;
 
 }
-header .menu .nav-menu{
+ .menu .nav-menu{
     width: 100%;
     position: absolute;
     top: 60px;
 }
 
-header .menu .nav-menu input{
+ .menu .nav-menu input{
     width: auto;
 }
 
