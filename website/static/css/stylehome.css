@@ -45,13 +45,13 @@ a h4:hover{
 .bloco-desafios-respondidos div{
     align-items: center;
      padding: 5px 5px;
-  margin-top: 10px;
+  margin-top: 5px;
 
 }
 .cabecalho{
    
-   justify-content: space-between;
-   margin-left: 30%;
+   
+   margin-left: 30vw;   
    color: #704483;
    font-family: 'Oswald', sans-serif;
   
@@ -84,14 +84,16 @@ a h4:hover{
     margin: 10px;
     padding: 5px 5px; 
     justify-content: space-between;
+    
+    
    
 }
 
 .desafios-criados div{
     align-items: center;
      padding: 5px 5px;
-  margin-top: 10px;
-
+    
+   
 }
 
 .desafio-geral{
@@ -103,7 +105,32 @@ a h4:hover{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
 }
 
+footer{ 
+    align-items: center; 
+    background-color: #cbbcd2;
+    display: flex;
+    bottom: 0;
+    justify-content: space-between;  
+    }
+    
 
+footer img{
+    margin-right: 5px;
+    margin-top: 3px;
+    width: 30px;
+}
+
+footer p{
+    color: #979797;
+    font-family: 'Montserrat';
+    margin-left: 5px;
+}
+
+footer p a{
+    
+    color: #979797;
+    text-decoration: none;
+}
 
 .h2-desafios-gerais{
     color: #704483;
@@ -241,31 +268,65 @@ background-color: #9d94a1;
     font-size: 13px;
 }
 
-@media (min-width:580px){
+@media (min-width:400px){
+    .bloco-desafios-gerais{
+        justify-content: space-between;
+        margin-left:15.5%;
+        width: 69%;
 
-    .desafio{
-        box-shadow:none;
     }
+    .bloco-desafios-gerais div{
+        margin-left: 12.5%;
+        width: 75%;
+
+
+    
+    }
+    .bloco-desafios-respondidos{
+        justify-content: space-between;
+        margin-left:15.5%;
+        width: 69%;
+       
+    }
+    .bloco-desafios-respondidos div{
+        margin-left: 12.5%;
+        width: 75%;
+
+
+    
+    }
+    .cabecalho{
+    margin-left: 35vw;
+        
+    }
+    
     .desafios-criados{
-        background-color: #97979729;
-        margin: 10px;
-        padding: 5px 5px; 
-        display: flex;
+        justify-content: space-between;
+        margin-left:15.5%;
+        width: 69%;
+
         
     }
     
     .desafios-criados div{
-      text-align: initial;
-      padding: 5px 15px;
-      margin-top: 2px;
-      font-size:20px;
-    
+        margin-left: 12.5%;
+        width: 75%;
+
     }
     .msg{
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
         margin-left: 18%;
         
       
       }
 }
+
+@media (min-width:480px){
+    .cabecalho{
+        margin-left: 39vw;
+    }
+}
+@media (min-width:768px){
+        .cabecalho{
+            margin-left: 43vw;
+        }
+    } 

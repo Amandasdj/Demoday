@@ -41,14 +41,13 @@
 
     
     <div class="cabecalho">
-        <img src="/media/{{ perfil.avatar }}" alt="" style="border-radius:50%; width:100px; height:100px;">
-        <p></p
-        ><p></p>
-        <h1>{{ perfil.nome }}</h1>
-        <p></p>
-        <p></p>
-        <p></p>
         
+
+        <img src="/media/{{ perfil.avatar }}" alt="" style="border-radius:50%; width:100px; height:100px;">
+
+
+
+        <h1>{{ perfil.nome }}</h1>
     </div>
     <div id=seus-desafios>
         <h2 class="seus-desafios"> SEUS DESAFIOS:</h2>
@@ -89,6 +88,7 @@
             </div>
             <p></p>
             <p></p>
+            <p></p>
         </div>
     </div>
     
@@ -98,8 +98,10 @@
         <div>
             {% for elem in respostas %}
             <div class="desafio-respondido">
+                <p></p>
                 <a href="/desafio/{{ perfil.id}}/{{ elem.resposta.desafio.id}}" target="_blank" rel="noopener noreferrer">
                     <h4>Título:{{ elem.resposta.desafio.titulo }}</h4>
+                    
                 </a>
                 <p class=titulos-respondidos style="font-size:7pt;">{{ elem.resposta.desafio.criacao }}</p>
                 <section class="likes">
@@ -151,6 +153,12 @@
         </div>
     </div>
     </div></div>
+    <footer>
+            <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">email</a>
+            </p>
+            <p>Desenvolvido por alunos da academia Mastertech</p>
+            <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
+        </footer>
       
 </body>
 </html>
