@@ -1,6 +1,7 @@
 *{ margin:0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+   
 }
 
 a{color: #704483;
@@ -14,7 +15,7 @@ a h4:hover{
     background-color: #e3dfe6;
 }
 .barra{
-    background-color: #f9f4f4;
+    background-color:  #6e448317;
     height: 100%;
     width: 200px;
     position: absolute;
@@ -73,6 +74,8 @@ a h4:hover{
     transform: translateX(200px);
     
     }
+
+
 .desafio{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
 }

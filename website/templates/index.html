@@ -27,12 +27,12 @@
             <p style="color: red">
                 {{ msg }}
             </p>
-            <form action="" method="post">
+            <form class="link" action="" method="post">
                 {% csrf_token %}
                 {{ login }}
                 <input type="submit" value="Logar">
             </form>
-            <a href="/cadastro/">Cadastre-se</a>
+            <a class= "cadastre-se" href="/cadastro/">Cadastre-se</a>
         
           </nav>
         </div>

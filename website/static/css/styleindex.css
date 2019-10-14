@@ -57,22 +57,36 @@ header{
 }
 
  .menu .barra{
-    background-color:#f9f4f4;
+    background-color: #f5f1f7;
     height: 100%;
     width: 200px;
     position: absolute;
     transition: all .2s linear;
     left: -200px;
+    margin-top: -6vh;;
 }
 
 .menu #check{
     display:none;
 }
 
+.menu .cadastre-se{
+    top: 100px;
+    display: flex;
+    background-color: #d5bfcb;
+    padding: 20px;
+    font-size: 12px;
+    transition: all .2s linear;
+    color:#f4f4f9;
+    border-bottom: 2px solid #f9f4f4;
+}
  .menu #check:checked ~ .barra{
     transform: translateX(200px);
 }
+.menu form{
+    margin-top: -3px;
 
+}
  .menu-index #icone{
     cursor: pointer;
     padding: 15px;
@@ -109,6 +123,8 @@ header{
 
  .menu .nav-menu input{
     width: auto;
+    margin-left: 0;
+   
 }
 
 /* Fim Menu */
