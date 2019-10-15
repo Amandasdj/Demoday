@@ -1,41 +1,43 @@
-
 {% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/styleindex.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'scripts/index.js' %}">
     <title>Dare</title>
 </head>
+
 <body>
-        <nav class="nav-base"><img src="{% static 'images/logo-redondo.jpeg'%}" alt="">
-            <p>Dare</p>
-            <p></p>
-        </nav>
-        
-         <header class="menu">
-        
-          <!-- Inicio menu -->
-          <input id="check" type="checkbox">
-          <label id="icone" for="check"><img src="{% static 'images/menu.png'%}" alt=""></label>
-        
+    <nav class="nav-base"><img src="{% static 'images/logo-redondo.jpeg'%}" alt="">
+        <p>Dare</p>
+        <p></p>
+    </nav>
+
+    <header class="menu">
+
+        <!-- Inicio menu -->
+        <input id="check" type="checkbox">
+        <label id="icone" for="check"><img src="{% static 'images/menu.png'%}" alt=""></label>
+
         <div class="barra">
-          <nav class="nav-menu">
-            <p style="color: red">
-                {{ msg }}
-            </p>
-            <form class="link" action="" method="post">
-                {% csrf_token %}
-                {{ login }}
-                <input type="submit" value="Logar">
-            </form>
-            <a class= "cadastre-se" href="/cadastro/">Cadastre-se</a>
-        
-          </nav>
+            <nav class="nav-menu">
+                <p style="color: red">
+                    {{ msg }}
+                </p>
+                <form class="link" action="" method="post">
+                    {% csrf_token %}
+                    {{ login }}
+                    <input type="submit" value="Logar">
+                </form>
+                <a class="cadastre-se" href="/cadastro/">Cadastre-se</a>
+
+            </nav>
         </div>
         <!-- Fim menu -->
             </header>
@@ -64,22 +66,23 @@
             
                 <p>    
                 <h4>Como funciona?</h4>
-                   <p>
+                <p>
                     A DARE é movida por desafios que são sugeridos pelos usuários que comprovam a
-                    a participação por meio de postagens. Os temas dos desafios são diversos e 
-                    englobam educação, ecologia, socialização, saúde e bem -estar. A nossa intenção 
+                    a participação por meio de postagens. Os temas dos desafios são diversos e
+                    englobam educação, ecologia, socialização, saúde e bem -estar. A nossa intenção
                     é te desafiar a fazer o bem, e você tá esperando o que para se conectar?
-               </p>
-             </section>
-        
-            <footer>
-                <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">email</a>
                 </p>
-                <p>Desenvolvido por alunos da academia Mastertech</p>
-                <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
-            </footer>
-            
-            
-             
+    </section>
+
+    <footer>
+        <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">email</a>
+        </p>
+        <p>Desenvolvido por alunos da academia Mastertech</p>
+        <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
+    </footer>
+
+
+
 </body>
+
 </html>
