@@ -75,10 +75,7 @@ a h4:hover{
     
     }
 
-.corpo{
-    height: 100%;
-    position: relative;
-}
+
 .desafio{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
 }
@@ -114,8 +111,7 @@ footer{
     display: flex;
     bottom: 0;
     justify-content: space-between; 
-    position: absolute; 
-    width: 100%; 
+    
     }
     
 
