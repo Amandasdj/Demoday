@@ -12,12 +12,7 @@ form{
     display: flex;
     flex-direction: column;
     margin: 0px; 
-    margin-left: 2.5%;
-    margin-top: 20px;
-    width: 95%;
-    transform: initial;
-    transition: .9s ease-out;
-    position: relative;
+    background-color: white;
 }
 
 form input{
@@ -27,7 +22,7 @@ form input{
     justify-content: center;
     width: 250px;
     background-color: rgba(187, 170, 170, 0.212);
-    color: #baaac1;
+  
 }
 label{
     font-family: 'Oswald' , sans-serif;
@@ -37,18 +32,19 @@ label{
     text-decoration-style: none;
 }
 input[type="submit"]{
+    background-color: #6f4584;
     font-family: 'Oswald' , sans-serif;
     font-size: 20px;
     text-decoration-style: dotted;
     margin-top: 40px;
-    color: rgb(114, 45, 114);
+    height: 6vh;
 }
 .nav-base {
     align-items: center;
     background-color: #6f4584;
     display: flex;
     justify-content: space-between;
-    grid-area: navbar;
+    font-family: 'Major Mono Display', monospace;
 }
 
 .nav-base img {
@@ -57,8 +53,7 @@ input[type="submit"]{
 }
 
 .nav-base p {
-    color: white;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Major Mono Display', monospace;
     text-decoration-style: solid;
     font-size: 35px;
     margin-right:35px;
