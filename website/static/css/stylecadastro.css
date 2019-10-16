@@ -58,3 +58,19 @@ input[type="submit"]{
     font-size: 35px;
     margin-right:35px;
 }
+
+@media (min-width:400px){
+    form{
+        justify-content: space-between;
+        margin-left:10%;
+        margin-top: 5%;
+        width: 69%;
+    }
+    form input{
+        margin-left: 12.5%;
+        width: 70%;
+    }
+    label{
+        margin-left: 10vw;
+    }
+           
