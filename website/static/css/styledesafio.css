@@ -1,0 +1,189 @@
+*{  font-family: 'montserrat';
+    margin: 0;
+    padding: 0;
+}
+.bloco-resposta a{
+    font-family: 'Roboto', sans-serif; 
+    margin-top: 10px;
+    text-align: center;
+}
+.bloco-resposta{
+
+    border: 1px black; 
+    margin: 50px;
+    padding: 15px;
+    width:100%;
+}
+  
+    
+.corpo{height: 100%;
+    position: relative;
+}
+
+.enviar{
+    width: 80px;
+    margin: 20px;
+    height: 30px;
+    
+}
+
+input{
+    border-color: rgba(220, 203, 2013, .5);
+    border-style: solid;
+    border-radius: 7px;
+    height: 20px;
+  
+    justify-content: center;
+    width: 250px;
+
+}
+input[type='submit']{
+    margin: 20px;
+}
+
+
+
+
+footer{ 
+    align-items: center; 
+    background-color: #cbbcd2;
+    bottom:0;
+    display: flex;
+    justify-content: space-between; 
+    position: absolute; 
+    width: 100%;
+    
+    }
+    
+
+footer img{
+    margin-right: 5px;
+    margin-top: 3px;
+    width: 30px;
+}
+
+footer p{
+    color: #979797;
+    font-family: 'Montserrat';
+    margin-left: 5px;
+}
+
+footer p a{
+    color: #979797;
+    text-decoration: none;
+}
+form{ align-items: center;
+    background-color:  #d5bfcb3d;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px; 
+    margin-left: 2.5%;
+    margin-top: 20px;
+    width: 95%;
+}
+h1{color: #6f4584;
+   font-family: 'Roboto', sans-serif; 
+   margin-top: 10px;
+   text-align: center;
+    
+    
+}
+h2{color: #6f4584;
+    font-family: 'Roboto', sans-serif; 
+    margin-top: 10px;
+    text-align: center;
+     
+     
+ }
+p{color: #6f4584;
+    font-family: 'Roboto', sans-serif; 
+    margin-top: 10px;
+    text-align: center;
+     
+     
+ }
+
+label{
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #6f4584;
+    font-weight: bold;
+}
+.nav-base { align-items: center;
+    background-color: #6f4584;
+    display: flex;
+    justify-content: space-between;
+    grid-area: navbar;
+} 
+.nav-base img{
+    margin-left: 2px;
+    width: 60px;
+   
+    
+}
+.nav-base p{
+    color: white;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 35px;
+    margin-right:35px;
+    
+} 
+textarea{
+    border-radius: 10px;
+    border-color: rgba(220, 203, 2013, .8);
+}
+
+@media (min-width:500px){
+form{
+    margin-left: 10%;
+    
+    width: 80%;
+}
+
+}
+
+@media (min-width:700px){
+form{
+    margin-left: 20%;
+    
+    width: 60%;
+}
+
+}
+
+@media (min-width:900px){
+    form{
+        margin-left: 30%;
+        
+        width: 40%;
+    }
+    
+    }
+    
+
+@media (min-width:1024px){
+   
+    form{
+        margin-left: 20%;
+        
+        width: 60%;
+    }
+    .enviar{
+        width: 100px;
+        font-size: 16px;
+    }
+    input{
+        width: 300px;
+    }
+    label{
+        font-size: 18px;
+    }
+    textarea{
+        width: 500px ;
+        height: 250px;
+    }
+     
+
+
+    }
