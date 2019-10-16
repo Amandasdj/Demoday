@@ -7,12 +7,18 @@
     FORM: NEGOCIO TODO
     FORM INPUT: BOTOESZINHOS*/
 
+body{
+    background-color: #cbbcd2;
+    
+
+}   
 form{
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 0px; 
     background-color: white;
+    border-radius: 30px;
+
 }
 
 form input{
@@ -20,8 +26,9 @@ form input{
     height: 30px;
     border-style: hidden;
     justify-content: center;
-    width: 250px;
     background-color: rgba(187, 170, 170, 0.212);
+    border-radius: 30px;
+    
   
 }
 label{
