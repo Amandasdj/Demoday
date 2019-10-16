@@ -15,8 +15,10 @@
       {{ msg }}
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
+
         {{ cadastro }}
         <input type="submit" value="Cadastrar">
+
     </form>
  
 </body>
