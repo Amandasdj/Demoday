@@ -1,6 +1,6 @@
 *{
     margin: 0;
-   color: whitesmoke;
+    color: whitesmoke;
 } 
 
 /*  LABEL: LETRASZINHAS
@@ -34,10 +34,32 @@ label{
     font-size: 20px;
     margin-top: 15px;
     color:rgb(114, 45, 114);
-    font-weight: bold;
+    text-decoration-style: none;
 }
-input{
+input[type="submit"]{
     font-family: 'Oswald' , sans-serif;
     font-size: 20px;
-    margin-top: 15vh;
+    text-decoration-style: dotted;
+    margin-top: 40px;
+    color: rgb(114, 45, 114);
+}
+.nav-base {
+    align-items: center;
+    background-color: #6f4584;
+    display: flex;
+    justify-content: space-between;
+    grid-area: navbar;
+}
+
+.nav-base img {
+    margin-left: 2px;
+    width: 60px;
+}
+
+.nav-base p {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-decoration-style: solid;
+    font-size: 35px;
+    margin-right:35px;
 }
