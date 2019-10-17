@@ -213,10 +213,9 @@ def desafiar(request, id):
 def desafio(request, id, id_desafio):
     
     desafio = Desafio.objects.filter(id=id_desafio, ativo=True).first() #Buscar desafio
-    respostas = Resposta.objects.filter(desafio__id=id_desafio, ativo=True).exclude() #Buscar respostas do desafio
+    respostas = Resposta.objects.filter(desafio__id=id_desafio, ativo=True) #Buscar respostas do desafio
     likes = Like.objects.filter(correspondente=id_desafio) #Buscar likes
     ultimo = likes.first() #Ultimo perfil a dar like
-    filtro = Resposta.objects.filter(autor__id=id, desafio=desafio, ativo=True).first() #Filtrar existencia de resposta idêntica
 
     #Entrega formulário
     form = RespostaForm()
@@ -226,18 +225,15 @@ def desafio(request, id, id_desafio):
         imagem = request.FILES.get('imagem')
         valor = request.POST.get('texto')
         autor = Perfil.objects.filter(id=id, ativo=True).first() #Buscar perfil do autor
-        desafio = Desafio.objects.filter(id=id_desafio, ativo=True).first() #Buscar desafio correspondente
 
-        #Verificação de Resposta indêntica
-        if filtro is None:
-
-            #Criação de uma resposta no banco
-            resposta = Resposta(valor=valor, autor=autor, desafio=desafio, imagem=imagem)
-            resposta.save()
+        #Criação de uma resposta no banco
+        resposta = Resposta(valor=valor, autor=autor, desafio=desafio, imagem=imagem)
+        resposta.save()
         
-
+    filtro = Resposta.objects.filter(autor__id=id, desafio=desafio, ativo=True).first() #Filtrar existencia de resposta idêntica
+    perfil = Perfil.objects.filter(id=id).first()
     #Entrega o contexto do desafio
-    if  len(likes) != 0 and filtro is None: 
+    if  len(likes) != 0 and filtro is None and desafio.autor.id != perfil.id: 
         context = {
 
             'desafio':desafio,
@@ -246,7 +242,7 @@ def desafio(request, id, id_desafio):
             'like':ultimo.perfil.user,
             'form':form
         }
-    elif filtro is None:
+    elif filtro is None and desafio.autor.id != perfil.id:
         context = {
 
             'desafio':desafio,
