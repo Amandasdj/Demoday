@@ -16,6 +16,7 @@ body{
 }   
 form{
     align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     background-color:white;
@@ -31,18 +32,27 @@ form input{
     justify-content: center;
     background-color: rgba(187, 170, 170, 0.212);
     border-radius: 30px;
+<<<<<<< HEAD
     padding-left:30px;
     
+=======
+    color: #6f4584;
+  
+>>>>>>> 1e400ed861e27c0f046999f86f30dd54cb38b05a
 }
 label{
     font-family: 'Oswald' , sans-serif;
     font-size: 20px;
-    margin-top: 15px;
-    color:rgb(114, 45, 114);
-    text-decoration-style: none;
+    color: #6f4584;
+    
+}
+input{
+    font-size: 20px;
+    text-align: center;
 }
 input[type="submit"]{
     background-color: #6f4584;
+    color: whitesmoke;
     font-family: 'Oswald' , sans-serif;
     font-size: 20px;
     text-decoration-style: dotted;
@@ -80,4 +90,8 @@ input[type="submit"]{
     form input{
         width: 50%;
     }
+<<<<<<< HEAD
+=======
+           
+>>>>>>> 1e400ed861e27c0f046999f86f30dd54cb38b05a
 }
