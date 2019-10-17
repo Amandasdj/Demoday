@@ -30,11 +30,19 @@
             </a>
             e mais {{ likes }} pessoas...
         </p>
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Responder">
-        </form>
+        {% if respondido == True %}
+
+            <p>Respondido</p>
+            
+        {% else %}
+
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Responder">
+            </form>
+
+        (% endif %)
         <div style="display: flex; justify-content: center;">
             {% for resposta in respostas %}
                 <div class="bloco-resposta">
