@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    color: whitesmoke;
+    color: white;
 } 
 
 /*  LABEL: LETRASZINHAS
@@ -8,16 +8,19 @@
     FORM INPUT: BOTOESZINHOS*/
 
 body{
+    align-items: center;
     background-color: #cbbcd2;
-    
-
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }   
 form{
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color:white;
     border-radius: 30px;
+    justify-content: center;
 
 }
 
@@ -28,8 +31,8 @@ form input{
     justify-content: center;
     background-color: rgba(187, 170, 170, 0.212);
     border-radius: 30px;
+    padding-left:30px;
     
-  
 }
 label{
     font-family: 'Oswald' , sans-serif;
@@ -51,7 +54,9 @@ input[type="submit"]{
     background-color: #6f4584;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
     font-family: 'Major Mono Display', monospace;
+    width: 100%;
 }
 
 .nav-base img {
@@ -68,16 +73,11 @@ input[type="submit"]{
 
 @media (min-width:400px){
     form{
-        justify-content: space-between;
-        margin-left:10%;
-        margin-top: 5%;
+        align-items: center;
+        justify-content: center;
         width: 69%;
     }
     form input{
-        margin-left: 12.5%;
-        width: 70%;
+        width: 50%;
     }
-    label{
-        margin-left: 10vw;
-    }
-           
+}
