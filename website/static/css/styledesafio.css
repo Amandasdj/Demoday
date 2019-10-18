@@ -16,7 +16,7 @@
     transition: 0.3s;
     width:100%;
 }
-.bloco-resposta:hover{
+.ver-resposta:hover{
     cursor: pointer;
     background-color: rgba(220, 203, 203, .5);
 }
@@ -108,7 +108,6 @@ p{color: #6f4584;
     margin-top: 10px;
     text-align: center;
      
-     
  }
 
 label{
@@ -182,6 +181,12 @@ label{
 textarea{
     border-radius: 10px;
     border-color: rgba(220, 203, 2013, .8);
+}
+.ver-resposta{
+    background-color:#6f4584;
+    border-radius:50%;
+    height:30px;
+    width:30px;
 }
 
 @media (min-width:500px){

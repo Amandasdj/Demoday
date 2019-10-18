@@ -44,6 +44,10 @@
                 <div class="bloco-resposta">
                     <img src="/media/{{ resposta.autor.avatar }}" alt="">
                     <p>Autor: <a href="/{{ resposta.autor.user }}" target="_blank" rel="noopener noreferrer">{{ resposta.autor.user }}</a></p>
+                    <div style="display:flex; align-items:center;">
+                        <div class="ver-resposta"></div>
+                        <p style="margin:0 0 0 10px;">Ver</p>
+                    </div>
                     <div style="display: none;">
                             <img src="/media/{{ resposta.imagem }}" alt="" width="200px" style="margin: 15px">
                             <p>Resposta: {{ resposta.valor }}</p>
