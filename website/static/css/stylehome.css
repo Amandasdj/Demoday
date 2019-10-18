@@ -115,7 +115,8 @@ footer {
     background-color: #cbbcd2;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0px;
+    position: relative;
+    bottom: 0px;
     width: 100%;
 }
  footer img{

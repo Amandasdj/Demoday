@@ -18,18 +18,20 @@
                     <p>Dare</p>
                     <p></p>
                 </nav>
-
-        <h1>{{ desafio.titulo }}</h1>
+<div class="desafio"> <h1>{{ desafio.titulo }}</h1>
         <h2>Tema: {{ desafio.tema }}</h2>
-        <p>{{ desafio.valor }}</p>
-        <p>Autor: <a href="/{{ desafio.autor.user }}" target="_blank" rel="noopener noreferrer">{{ desafio.autor.user }}</a></p>
-        <p>{{ desafio.criacao }}</p>
-        <p>likes - 
+        <p class="criacao">{{ desafio.criacao }}</p>
+        <p class="descricao">{{ desafio.valor }}</p>
+        <p>Autor: <a href="/{{ desafio.autor.user }}" target="_blank" rel="noopener noreferrer">{{ desafio.autor.user }}</a></p> 
+         <p>likes - 
             <a href="/{{like}}" target="_blank" rel="noopener noreferrer">
                 {{like}}
             </a>
             e mais {{ likes }} pessoas...
         </p>
+        </div>
+       
+      
         {% if not respondido %}
 
             <form action="" method="post" enctype="multipart/form-data">
@@ -39,7 +41,7 @@
             </form>
 
         {% endif %}
-        <div style="display: flex; justify-content: center;">
+        <div class=" div-resposta">
             {% for resposta in respostas %}
                 <div class="bloco-resposta">
                     <img src="/media/{{ resposta.autor.avatar }}" alt="">
