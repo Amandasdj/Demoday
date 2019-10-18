@@ -11,12 +11,17 @@
     <script src="{% static 'scripts/modalCriarDesafio.js' %}" defer></script>
     <title>Document</title>
 </head>
+
 <body> 
-  <div class="corpo">   
+  
+
+
         <nav class="nav-base"><img src="{% static 'images/logo-redondo.jpeg'%}" alt="">
             <p>Dare</p>
             <p></p>
         </nav>
+
+
 
 
 
@@ -27,16 +32,7 @@
             <p>
                 <div class="link" id="desafiar">Desafiar</div>
             </p>
-            <a href="#responder">
-                <div class="link">Responder</div>
-            </a>
-            <a href="#seus-desafios">
-                <div class="link">Seus Desafios</div>
-            </a>
-            <a href="">
-                <div class="link">Perfil</div>
-            </a>
-            <a href="">
+              <a href="">
                 <div class="link">Configurações</div>
             </a>
         </nav>
@@ -162,11 +158,12 @@
     </div>
     </div></div>
     <footer>
-            <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">email</a>
-            </p>
-            <p>Desenvolvido por alunos da academia Mastertech</p>
-            <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
+        <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com" >Email</a></p>
+        <p>Desenvolvido por alunos da academia Mastertech</p>
+        <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
     </footer>
+
+
     <div id="modal" class="inativo">
         <h1>Crie seu desafio</h1>
         <div id="bolinha"></div>
@@ -175,7 +172,7 @@
             {{ form }}
             <input class="enviar" type="submit" value="Criar">
         </form>
-    </div>
+    
       
 </body>
 </html>

@@ -47,7 +47,7 @@ a h4:hover{
 .bloco-desafios-respondidos div{
     align-items: center;
      padding: 5px 5px;
-  margin-top: 5px;
+    margin-top: 5px;
 
 }
 .cabecalho{
@@ -80,6 +80,8 @@ a h4:hover{
 
 .desafio{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
+    padding: 5px 5px;
+    margin-top:10px;
 }
 .desafios-criados{
     background-color:#d5bfcb3d;
@@ -95,6 +97,7 @@ a h4:hover{
 .desafios-criados div{
     align-items: center;
      padding: 5px 5px;
+     
     
    
 }
@@ -107,31 +110,22 @@ a h4:hover{
 .desafio-respondido{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
 }
-
-footer{ 
-    align-items: center; 
+footer {
+    align-items: center;
     background-color: #cbbcd2;
     display: flex;
-    bottom: 0;
-    justify-content: space-between; 
-    }
-    
-
-footer img{
+    justify-content: space-between;
+    margin-bottom: 0px;
+    width: 100%;
+}
+ footer img{
     margin-right: 5px;
     margin-top: 3px;
-    width: 30px;
-}
-
-footer p{
+     width: 30px;
+ }
+footer p, a{
     color: #979797;
-    font-family: 'Montserrat';
-    margin-left: 5px;
-}
-
-footer p a{
-    
-    color: #979797;
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
 }
 

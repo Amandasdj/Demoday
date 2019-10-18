@@ -9,12 +9,15 @@
 }
 .bloco-resposta{
 
-    background-color: #cbbcd2;
+    background-color: rgba(220, 203, 255, 0.8);
     border-radius: 20px;
-    margin: 50px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
     padding: 15px;
     transition: 0.3s;
-    width:100%;
+    width: 70%;
 }
 .bloco-resposta:hover{
     cursor: pointer;
@@ -22,9 +25,7 @@
 }
   
     
-.corpo{height: 100%;
-    position: relative;
-}
+
 
 .enviar{
     width: 80px;

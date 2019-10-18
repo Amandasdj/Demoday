@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    color: white;
+    color: #6f4584;
 } 
 
 /*  LABEL: LETRASZINHAS
@@ -34,6 +34,25 @@ form input{
     border-radius: 30px;
     padding-left:30px;
     
+}
+footer{
+ align-items: center;
+ background-color: #f1eded;
+ display: flex;
+ justify-content: space-between;
+ margin-top: 10px;
+ width: 100%;
+}
+footer img{
+    margin-right: 5px;
+    margin-top: 3px;
+    width: 30px;
+
+}
+footer p , a{
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 label{
     font-family: 'Oswald' , sans-serif;
