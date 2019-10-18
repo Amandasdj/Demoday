@@ -14,6 +14,7 @@ def cadastrar(request):
         user = request.POST.get('user')
         email = request.POST.get('email')
         senha = request.POST.get('senha')
+        confirma = request.POST.get('confirma')
         telefone = request.POST.get('telefone')
         nome = request.POST.get('nome')
         sobrenome = request.POST.get('sobrenome')
@@ -30,6 +31,10 @@ def cadastrar(request):
         elif Perfil.objects.filter(telefone=telefone).exists():
 
             return render(request, 'cadastro.html', {'cadastro':form, 'msg':'*Telefone já cadastrado'})
+        
+        elif senha != confirma:
+
+            return render(request, 'cadastro.html', {'cadastro':form, 'msg':'*Senha e confirmação de senha diferentes'})
         
         else:
 
@@ -225,15 +230,18 @@ def desafio(request, id, id_desafio):
         imagem = request.FILES.get('imagem')
         valor = request.POST.get('texto')
         autor = Perfil.objects.filter(id=id, ativo=True).first() #Buscar perfil do autor
+        filtro = Resposta.objects.filter(valor=valor, autor=autor, desafio=desafio).first()
 
-        #Criação de uma resposta no banco
-        resposta = Resposta(valor=valor, autor=autor, desafio=desafio, imagem=imagem)
-        resposta.save()
+        if filtro is None:
+            #Criação de uma resposta no banco
+            resposta = Resposta(valor=valor, autor=autor, desafio=desafio, imagem=imagem)
+            resposta.save()
         
     filtro = Resposta.objects.filter(autor__id=id, desafio=desafio, ativo=True).first() #Filtrar existencia de resposta idêntica
     perfil = Perfil.objects.filter(id=id).first()
+    
     #Entrega o contexto do desafio
-    if  len(likes) != 0 and filtro is None and desafio.autor.id != perfil.id: 
+    if  len(likes) != 0 and (filtro is None and desafio.autor.id != perfil.id): 
         context = {
 
             'desafio':desafio,

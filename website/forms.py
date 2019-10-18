@@ -10,6 +10,7 @@ class  LoginForm(forms.Form):
 class UsuarioForm(LoginForm): #Herda campos de LoginForm
 
     #Formulário de cadastro
+    confirma = forms.CharField(label='Confirmar senha', required=True, widget=forms.widgets.PasswordInput(), max_length=15)
     user = forms.CharField(label='User', required=True, max_length=15)
     nome = forms.CharField(label='Nome', required=True, max_length=15)
     sobrenome = forms.CharField(label='Sobrenome', required=True, max_length=15)
