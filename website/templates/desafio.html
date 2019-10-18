@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/stylehome.css' %}">
     <link rel="stylesheet" href="{% static 'css/styledesafio.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
-    <script defer src="{% static 'scripts/desafio.js' %}"></script>
+    <script defer src="{% static 'scripts/modalResposta.js' %}"></script>
     <title>Document</title>
 </head>
 <body>
@@ -42,19 +42,21 @@
         <div style="display: flex; justify-content: center;">
             {% for resposta in respostas %}
                 <div class="bloco-resposta">
-                    <p>Resposta: {{ resposta.valor }}</p>
+                    <img src="/media/{{ resposta.autor.avatar }}" alt="">
                     <p>Autor: <a href="/{{ resposta.autor.user }}" target="_blank" rel="noopener noreferrer">{{ resposta.autor.user }}</a></p>
-                    <a href="/like/r/{{ resposta.id }}" style="font-size: 10pt;">likes - {{ resposta.likes.perfil.user }} e mais {{ resposta.total }} pessoas..</a>
-                    <p style="font-size:7pt;">{{ resposta.desafio.criacao }}</p>
-                    <img src="/media/{{ resposta.imagem }}" alt="" width="200px" style="margin: 15px">
+                    <div style="display: none;">
+                            <img src="/media/{{ resposta.imagem }}" alt="" width="200px" style="margin: 15px">
+                            <p>Resposta: {{ resposta.valor }}</p>
+                            <p style="font-size:7pt;">{{ resposta.desafio.criacao }}</p>
+                            <a href="/like/r/{{ resposta.id }}" style="font-size: 10pt;">likes - {{ resposta.likes.perfil.user }} e mais {{ resposta.total }} pessoas..</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
         <div id="modal" class="inativo">
+            <div id="bolinha"></div>
             <div id="moldura" class="inativo">
-        
             </div>          
-            
         </div>
     
         <footer>
