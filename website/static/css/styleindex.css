@@ -5,7 +5,7 @@ body {
                           'header header header header'
                          'section section section section'
                          'footer footer footer footer';
-grid-template-columns: 25vw 25vw 25vw 25vw;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 12vh 5vh 50vh 145vh 10vh;
 margin: 0;
 }
@@ -159,7 +159,7 @@ form input {
 }
 
 section {
-    justify-content: space-around;
+    
     grid-area: section;
     margin-top: -150px;
 }
@@ -181,7 +181,7 @@ section img {
 }
 
 section h1,
-h4 {
+h4, h6{
     color: #704483;
     text-align: center;
 }
@@ -190,6 +190,10 @@ section p {
     margin: 18px;
 }
 
+.politica{
+    
+    font-size: 12px;
+}
 footer {
     align-items: center;
     background-color: #cbbcd2;
@@ -236,7 +240,7 @@ footer p a {
 @media(min-width:710px){
 
 section{
-    margin-top:0;
+    margin-top: 0;
 }
 .banner h3{
     
@@ -250,4 +254,33 @@ section{
         font-size: 25px;
         
     }
+.img-1{
+    margin-left: 30%;
+ }
+ .menu .cadastre-se{
+     font-size: 20px;
+ }
+ .menu .link{
+     font-size: 15px;
+ }
+ section h1{
+    font-size: 60px;
+ }
+ section h4{
+    font-size: 30px;   
+ }
+ section h6{
+    margin-top: 150px;
+    
+}
+ section img {
+     width: 200px;
+ }
+section p{
+    
+    font-size: 20px;
+    margin-left: 15%;
+    text-align: center;
+    width: 70%;
+}
     }
