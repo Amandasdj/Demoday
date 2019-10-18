@@ -164,6 +164,25 @@ def home(request, id):
                     'respostas': len(respostas),
                     'like':'Sem likes!!'
                     })
+        
+        #Entregar formulário
+        form = DesafioForm()
+
+        if request.method == 'POST': #Se mátodo da requisição for post
+            titulo = request.POST.get('titulo')
+            tema = request.POST.get('tema')
+            valor = request.POST.get('valor')
+            autor = Perfil.objects.filter(id=id, ativo=True).first() #Buscar perfil do autor
+            filtro = Desafio.objects.filter(autor=autor, titulo=titulo, tema=tema, valor=valor, ativo=True).first() #Buscar se existe desafio idêntico
+
+            #Verifica se Usuario já criou desafio idêntico
+            if filtro is None:
+
+                #Criação de um desafio no banco
+                desafio = Desafio(autor=autor, titulo=titulo, tema=tema, valor=valor)
+                desafio.save()
+
+                return redirect('/home/{}'.format(id))
 
         #Entregar mensagem de 0 desafios criados
         if desafios.first() is None: #Se primeiro desafio não existir
@@ -173,7 +192,8 @@ def home(request, id):
                 'perfil':perfil, #Perfil do usuário
                 'msg':'Você não criou nenhum desafio ainda, tente criar algum!!!!',
                 'respostas':respostas_likes, #Array de respostas com infos
-                'gerais':gerais_filtrados #Array de desafios não respondidos com infos
+                'gerais':gerais_filtrados, #Array de desafios não respondidos com infos
+                'form':form
             }
 
             return render(request, 'home.html', context)
@@ -185,7 +205,8 @@ def home(request, id):
                 'perfil':perfil,
                 'criados':criados, #Arrays com desafios criados e infos
                 'respostas':respostas_likes,
-                'gerais':gerais_filtrados
+                'gerais':gerais_filtrados,
+                'form':form
             }
 
             return render(request, 'home.html', context)
@@ -194,43 +215,43 @@ def home(request, id):
         return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
 
 
-def desafiar(request, id):
+# def desafiar(request, id):
 
-    try:
-        #Entregar formulário
-        form = DesafioForm()
+#     try:
+#         #Entregar formulário
+#         form = DesafioForm()
 
-        #Para verificar se desafio idêntico existente
-        context = {'desafio':form}
+#         #Para verificar se desafio idêntico existente
+#         context = {'desafio':form}
 
-        if request.method == 'POST': #Se mátodo da requisição for post
-            titulo = request.POST.get('titulo')
-            tema = request.POST.get('tema')
-            valor = request.POST.get('valor')
-            autor = Perfil.objects.filter(id=id, ativo=True).first() #Buscar perfil do autor
-            filtro = Desafio.objects.filter(autor=autor, titulo=titulo, tema=tema, valor=valor, ativo=True).first() #Buscar se existe desafio idêntico
+#         if request.method == 'POST': #Se mátodo da requisição for post
+#             titulo = request.POST.get('titulo')
+#             tema = request.POST.get('tema')
+#             valor = request.POST.get('valor')
+#             autor = Perfil.objects.filter(id=id, ativo=True).first() #Buscar perfil do autor
+#             filtro = Desafio.objects.filter(autor=autor, titulo=titulo, tema=tema, valor=valor, ativo=True).first() #Buscar se existe desafio idêntico
 
-            context = {
+#             context = {
 
-                'desafio':form,
-                'msg':'*Esse desafio já foi criado!!!'
-            }
+#                 'desafio':form,
+#                 'msg':'*Esse desafio já foi criado!!!'
+#             }
 
-            #Verifica se Usuario já criou desafio idêntico
-            if filtro is None:
+#             #Verifica se Usuario já criou desafio idêntico
+#             if filtro is None:
 
-                #Criação de um desafio no banco
-                desafio = Desafio(autor=autor, titulo=titulo, tema=tema, valor=valor)
-                desafio.save()
+#                 #Criação de um desafio no banco
+#                 desafio = Desafio(autor=autor, titulo=titulo, tema=tema, valor=valor)
+#                 desafio.save()
 
-                return redirect('/home/{}'.format(id))
+#                 return redirect('/home/{}'.format(id))
 
 
-        return render(request, 'desafiar.html', context)
+#         return render(request, 'desafiar.html', context)
 
-    except:
+#     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+#         return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
 
 #Página de um desafio
 def desafio(request, id, id_desafio):

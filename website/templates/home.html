@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/stylehome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styledesafiar.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
+    <script src="{% static 'scripts/modalCriarDesafio.js' %}" defer></script>
     <title>Document</title>
 </head>
 <body> 
@@ -22,9 +24,9 @@
     <label id="icone" for="check"><img src="{% static 'images/menu.png' %}" alt=""></label>
     <div class="barra">
         <nav class="nav-menu">
-            <a href="desafiar/{{perfil.id}}">
-                <div class="link">Desafiar</div>
-            </a>
+            <p>
+                <div class="link" id="desafiar">Desafiar</div>
+            </p>
             <a href="#responder">
                 <div class="link">Responder</div>
             </a>
@@ -164,7 +166,16 @@
             </p>
             <p>Desenvolvido por alunos da academia Mastertech</p>
             <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
-        </footer>
+    </footer>
+    <div id="modal" class="inativo">
+        <h1>Crie seu desafio</h1>
+        <div id="bolinha"></div>
+        <form action="" method="post" id="moldura" class="inativo">
+            {% csrf_token %}
+            {{ form }}
+            <input class="enviar" type="submit" value="Criar">
+        </form>
+    </div>
       
 </body>
 </html>

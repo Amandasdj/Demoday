@@ -24,7 +24,6 @@ urlpatterns = [
     path('cadastro/', views.cadastrar),
     path('', views.login),
     path('home/<str:id>', views.home),
-    path('home/desafiar/<str:id>', views.desafiar),
     path('delete/<str:id>/<str:id_desafio>/', views.delete_desafio),
     path('desafio/<str:id>/<str:id_desafio>/', views.desafio),
     path('<str:user>', views.usuario),
