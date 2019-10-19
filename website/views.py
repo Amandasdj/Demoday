@@ -119,6 +119,7 @@ def home(request, id):
         #Entregar apenas desafios não respondidos
         for desafio in desafios_gerais:
             if Resposta.objects.filter(desafio__id=desafio.id, autor=perfil).first() is None: #Se não houver resposta do perfil
+                ultima_resposta = Resposta.objects.filter(desafio__id=desafio.id).last()
                 likes = Like.objects.filter(correspondente=desafio.id) #Buscar likes do desafio
                 seu_like = Like.objects.filter(correspondente=desafio.id, perfil=id).first() #Buscar se perfil já deu like
 
@@ -129,7 +130,8 @@ def home(request, id):
                     gerais_filtrados.append({
                         'desafio':desafio,
                         'vc':None,
-                        'likes': len(likes) #Quantidade de likes
+                        'likes': len(likes), #Quantidade de likes
+                        'ultima':ultima_resposta
                         })
 
                 else: #Senão
@@ -138,7 +140,8 @@ def home(request, id):
                     gerais_filtrados.append({
                         'desafio':desafio,
                         'vc':'Você e mais ',
-                        'likes':len(likes)
+                        'likes':len(likes),
+                        'ultima':ultima_resposta
                         })
 
         #Entregar infos de likes de desafios criados
