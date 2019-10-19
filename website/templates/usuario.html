@@ -1,52 +1,59 @@
-
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/styleusuario.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap"
+        rel="stylesheet">
     <title>Usuario</title>
 </head>
+
 <body>
-        <nav class="nav-base"><img src="{% static 'images/logo-redondo.jpeg'%}" alt="">
-            <p>Dare</p>
-            <p></p>
-        </nav>
-  
-        <header class="perfil"> <p></p>
-        <div><h1>{{ perfil.user }}</h1>
-        <img src="media/{{ perfil.avatar }}" alt="">
-        <h1>{{ perfil.user }}</h1>
-        <h3>{{ perfil.nome}} {{perfil.sobrenome}}</h3>
-        <p>{{ perfil.email }}</p>
-        <p>{{ perfil.mensagem }}</p></div> <p></p>
+    <nav class="nav-base"><img src="{% static 'images/logo-redondo.jpeg'%}" alt="">
+        <p>Dare</p>
+        <p></p>
+    </nav>
 
-        </header> 
-    
+    <header class="perfil">
+        <p></p>
+        <div>
+            <img src="media/{{ perfil.avatar }}" alt="">
+            <h1>{{ perfil.user }}</h1>
+            <h3>{{ perfil.nome}} {{perfil.sobrenome}}</h3>
+            <p>{{ perfil.email }}</p>
+            <p>{{ perfil.mensagem }}</p>
+        </div>
+        <p></p>
+
+    </header>
+
+    <div class="bloco-desafios">
         {% for desafio in desafios %}
-            <section >
-    
-                <a href="/desafio/{{ desafio.id }}" target="_blank" rel="noopener noreferrer">
-                    <h4>- {{ desafio.titulo }}</h4>
-                </a>
-                <p>Tema: {{ desafio.tema }}</p>
-                <p>{{ desafio.valor }}</p>
-                <p style="font-size:7pt;">{{ desafio.criacao }}</p>
-            </section> 
-             {% endfor %}
-   
-    <footer>
-            <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">Email</a></p>
-            <p>Desenvolvido por alunos da academia Mastertech
-        
-            </p>
-            <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
-        </footer>
-</body>
-</html>
-    
-      
 
+        <div class="desafios"><a href="/desafio/{{ desafio.id }}" target="_blank" rel="noopener noreferrer">
+                <h4>- {{ desafio.titulo }}</h4>
+            </a>
+            <p>Tema: {{ desafio.tema }}</p>
+            <p>{{ desafio.valor }}</p>
+            <p style="font-size:7pt;">{{ desafio.criacao }}</p>
+        </div>
+
+
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">Email</a>
+        </p>
+        <p>Desenvolvido por alunos da academia Mastertech
+
+        </p>
+        <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
+    </footer>
+</body>
+
+</html>
