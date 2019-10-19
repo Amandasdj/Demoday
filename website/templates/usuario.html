@@ -32,14 +32,18 @@
     </header>
 
     <div class="bloco-desafios">
+        <h2>Desafios</h2>
         {% for desafio in desafios %}
 
-        <div class="desafios"><a href="/desafio/{{ desafio.id }}" target="_blank" rel="noopener noreferrer">
-                <h4>- {{ desafio.titulo }}</h4>
+        <div class="desafios">
+           
+            <a href="/desafio/{{ desafio.id }}"  rel="noopener noreferrer">
+                <h4>Título: {{ desafio.titulo }}</h4>
             </a>
-            <p>Tema: {{ desafio.tema }}</p>
-            <p>{{ desafio.valor }}</p>
-            <p style="font-size:7pt;">{{ desafio.criacao }}</p>
+            <p class="criacao" >{{ desafio.criacao }}</p>
+            <p class="tema">Tema: <p class="tema-valor">{{ desafio.tema }}</p></p>
+            
+            
         </div>
 
 

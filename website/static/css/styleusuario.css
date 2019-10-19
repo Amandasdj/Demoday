@@ -1,50 +1,68 @@
 *{ 
     margin:0;
     padding: 0;
+   
 }
+a{
+    text-decoration: none;
+    color: #979797;
 
+}
 body{
-    display: grid;
-    grid-template-areas: 'navbar navbar navbar'
-                         'header header header'
-                         'section section section'
-                         'footer footer footer';
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 12vh 40vh 50vh 7vh;
+    background-image: url('/static/images/logo-bg.png');
+    background-size: 800px;
+    z-index: -1;
+    
+
     
 }
 .bloco-desafios{
-    grid-area: section;
+ 
     background-color:#d5bfcb3d;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    font-family: 'montserrrat', sans-serif;
     margin-bottom: 10px;
     margin-left: 15%;
-    width: 70%;
-    }
+    padding-bottom: 10px;
+    text-align: center;
+    width: 70%;    }
+.bloco-desafios h2{
+     color: #6f4584;
+     font-family: 'montserrrat', sans-serif;
+    padding-top: 20px;
+   
+    
+}
+.criacao{
+    color: #baaac1;
+    font-family: 'oswald', sans-serif;
+    font-size:7pt;
+}
 .desafios{
      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
      margin-left: 5%;
      margin-bottom: 15px;
-     text-align: center;
+     padding-top: 10px;
+     text-align: center; 
      width: 90%;
-     
     
    
 }
- header{
-     grid-area: header;
- }
+
 .perfil{
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    color:#979797;
-    background-color: #d5bfcb3d;
+     background-color: #d5bfcb3d;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    color:#979797;
+    display: flex;
+    font-family: 'oswald', sans-serif;
+    margin-left: 15%; 
+    margin-top: 10px;
+    justify-content: space-between;
     width: 70%;
-    margin-left: 15%;
+   
+
 }
 
 .perfil div{
@@ -65,7 +83,7 @@ body{
 footer{ 
     align-items: center; 
     background-color: #cbbcd2;
-    grid-area: footer;
+    
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -96,8 +114,7 @@ footer p a{
     background-color: #6f4584;
     display: flex;
     justify-content: space-between;
-    grid-area: navbar;
-} 
+}
 .nav-base img{
     margin-left: 2px;
     width: 60px;
@@ -111,4 +128,27 @@ footer p a{
     margin-right:35px;
     
 } 
+.tema{
+    color: #6f4584;
 
+}
+.tema-valor{
+    color: #979797;
+}
+
+@media (min-width:900px){
+    .bloco-desafios h2{
+        font-size: 18pt;
+    }
+
+    a{
+        font-size: 14pt;
+
+    }
+    .criacao{
+        font-size: 10pt;
+    }
+    .tema{
+        font-size: 13pt;
+    }
+}
