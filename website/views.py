@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from website.forms import *
 from website.models import *
+from django.core.files import File
+from django.conf import settings
+import os
 
 def cadastrar(request):
 
@@ -11,7 +14,6 @@ def cadastrar(request):
         if request.method == 'POST':
 
             #Pegar Valores do forms
-            avatar = request.FILES.get('avatar')
             user = request.POST.get('user')
             email = request.POST.get('email')
             senha = request.POST.get('senha')
@@ -40,7 +42,7 @@ def cadastrar(request):
             else:
 
                 #Cadastra e acessa home
-                perfil = Perfil(avatar=avatar, user=user, sobrenome=sobrenome, nome=nome, email=email, telefone=telefone, senha=senha)
+                perfil = Perfil(avatar='avatar/plano_de_fundo.png', user=user, sobrenome=sobrenome, nome=nome, email=email, telefone=telefone, senha=senha)
                 perfil.save()
                 
                 return redirect('/home/{}'.format(perfil.id))
