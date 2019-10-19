@@ -354,3 +354,15 @@ def delete_desafio(request, id, id_desafio):
     except:
 
         return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+
+def avatar(request, id):
+    try:
+        if request.method == 'POST':
+            perfil = Perfil.objects.filter(id=id).first()
+            perfil.avatar = request.FILES.get('avatar')
+            perfil.save()
+
+            return redirect('/home/{}'.format(id))
+    except:
+
+        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
