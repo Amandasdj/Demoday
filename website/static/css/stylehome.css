@@ -5,7 +5,7 @@
 }
 body{
     background-image: url('/static/images/logo-bg.png');
-    background-size: 500px;
+    background-size: 800px;
     z-index: -1;
 }
 
