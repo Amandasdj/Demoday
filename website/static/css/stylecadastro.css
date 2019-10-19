@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    color: #6f4584;
+    
 } 
 
 /*  LABEL: LETRASZINHAS
@@ -18,6 +18,7 @@ form{
     align-items: center;
     background-color:white;
     border-radius: 30px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,6 +31,7 @@ form input{
     background-color: rgba(187, 170, 170, 0.212);
     border-radius: 30px; 
     border-style: hidden;
+    color: #6f4584;
     height: 30px;
     justify-content: center;
     margin: 5px;
@@ -80,6 +82,7 @@ label{
 .nav-base {
     align-items: center;
     background-color: #6f4584;
+    
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
@@ -92,7 +95,7 @@ label{
     width: 60px;
 }
 
-.nav-base p {
+.nav-base p {color: white;
     font-family: 'Major Mono Display', monospace;
      font-size: 35px;
     margin-right:35px;
