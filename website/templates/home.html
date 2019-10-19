@@ -41,87 +41,83 @@
     
     
 
-    
-    <div class="cabecalho">
-        
+    <div id="conteudo">
 
-        <img src="/media/{{ perfil.avatar }}" alt="" style="border-radius:50%; width:100px; height:100px;">
-
-
-
-
-        <h1>{{ perfil.nome }}</h1>
-    </div>
-    <div id=seus-desafios>
-        <h2 class="seus-desafios"> SEUS DESAFIOS:</h2>
-        <div class="desafios-criados">
-    
-            <div class="seus-desafios">
-            </div>
-            
-            <p class="msg">{{ msg }}</p>
-            
-            <div>
-                {% for criado in criados %}
-                <div class="desafio">
-    
-                    <a href="/desafio/{{ perfil.id}}/{{ criado.desafio.id }}" target="_blank" rel="noopener noreferrer">
-                        <h4>Título: {{ criado.desafio.titulo }}</h4>
-                    </a>
-                    <p class="titulos" style="font-size:7pt;">{{ criado.desafio.criacao }}</p>
-                    <p class="tema">Tema: <p class=tema-valor>{{ criado.desafio.tema }}</p>
+        <div class="cabecalho">
+            <img src="/media/{{ perfil.avatar }}" alt="">
+            <h1>{{ perfil.nome }}</h1>
+        </div>
+        <div id=seus-desafios>
+            <h2 class="seus-desafios"> SEUS DESAFIOS:</h2>
+            <div class="desafios-criados">
+                
+                <div class="seus-desafios">
+                </div>
+                
+                <p class="msg">{{ msg }}</p>
+                
+                <div>
+                    {% for criado in criados %}
+                    <div class="desafio">
+                        <p class="respostas" style="margin-left: 80%;">{{ criado.respostas }} respostas</p>
+                    <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                        <a href="/desafio/{{ perfil.id}}/{{ criado.desafio.id }}" target="_blank" rel="noopener noreferrer">
+                            <h4>Título: {{ criado.desafio.titulo }}</h4>
+                        </a>
+                        <p class="tema">Tema: <p class=tema-valor>{{ criado.desafio.tema }}</p>
                     </p>
                     <p class="titulos">{{ nomeado.desafio.valor }}</p>
-    
-                    <section class="likes">
+                </div>
+                    
+                    <section class="likes" style="margin-left: 80%;">
                         {% if criado.like != 'Sem likes!!' %}
                         likes -
                         <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer">
                             {{ criado.like }}
                         </a>
                         e mais {{ criado.likes }} pessoas...
-                        </p>
+                    </p>
+                    {% else %}
+                    <p>{{ criado.like }}</p>
+                    {% endif %}
+                    </section>
+                    <a href="/delete/{{ perfil.id }}/{{ criado.desafio.id }}" style="padding: 20px;">Excluir</a>
+                    <p class="titulos" style="font-size:8pt;margin-left:40%;">{{ criado.desafio.criacao }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        
+        <h2 class="p-desafios-respondidos">DESAFIOS RESPONDIDOS:</h2>
+        <div class="bloco-desafios-respondidos">
+            <p></p>
+            <div>
+                {% for elem in respostas %}
+                <div class="desafio-respondido">
+                    <p></p>
+                    <a href="/desafio/{{ perfil.id}}/{{ elem.resposta.desafio.id}}" target="_blank" rel="noopener noreferrer">
+                        <h4>Título:{{ elem.resposta.desafio.titulo }}</h4>
+                        
+                    </a>
+                    <p class=titulos-respondidos style="font-size:8pt;">{{ elem.resposta.desafio.criacao }}</p>
+                    <section class="likes">
+                        {% if elem.like != 'Sem likes!!' %}
+                        likes -
+                        <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer">
+                            {{ elem.like }}
+                        </a>
+                        e mais {{ elem.likes }} pessoas...
+    
                         {% else %}
-                        <p>{{ criado.like }}
-                            {% endif %}
-                            <p class="respostas">
-                                {{ criado.respostas }} - respostas
-                            </p>
-                            <a href="/delete/{{ perfil.id }}/{{ criado.desafio.id }}">Excluir</a>
+                        <p>{{ elem.like }}</p>
+                        {% endif %}
+                    </section>
                 </div>
                 {% endfor %}
-            </div>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
-    </div>
-    
-    <h2 class="p-desafios-respondidos">DESAFIOS RESPONDIDOS:</h2>
-    <div class="bloco-desafios-respondidos">
-        <p></p>
-        <div>
-            {% for elem in respostas %}
-            <div class="desafio-respondido">
-                <p></p>
-                <a href="/desafio/{{ perfil.id}}/{{ elem.resposta.desafio.id}}" target="_blank" rel="noopener noreferrer">
-                    <h4>Título:{{ elem.resposta.desafio.titulo }}</h4>
-                    
-                </a>
-                <p class=titulos-respondidos style="font-size:7pt;">{{ elem.resposta.desafio.criacao }}</p>
-                <section class="likes">
-                    {% if elem.like != 'Sem likes!!' %}
-                    likes -
-                    <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer">
-                        {{ elem.like }}
-                    </a>
-                    e mais {{ elem.likes }} pessoas...
-    
-                    {% else %}
-                    <p>{{ elem.like }}
-                        {% endif %}
-            </div>
-            {% endfor %}
         </div>
         <p></p>
         
@@ -130,31 +126,34 @@
     <div id="responder">
         <h2 class="h2-desafios-gerais">DESAFIOS GERAIS:</h2>
         <div class="bloco-desafios-gerais">
-    
+            
             {% for item in gerais %}
-    
+            
             <div class="desafio-geral">
                 <h4 class="te-desafia">
+                    <img src="/media/{{ item.desafio.autor.avatar }}" alt="" width="80px" height="80px" style="border-radius:50%;">
                     <a href="/{{ item.desafio.autor.user }}" target="_blank"
-                        rel="noopener noreferrer">{{ item.desafio.autor.user }}</a> te desafia!!
-                    </h3>
+                    rel="noopener noreferrer">{{ item.desafio.autor.user }}</a> te desafia!!
+                </h3>
+                <div class="desafio-geral-conteudo">
                     <a href="/desafio/{{ perfil.id }}/{{ item.desafio.id }}" target="_blank" rel="noopener noreferrer">
                         <h4>Título: {{ item.desafio.titulo }}</h4>
                     </a>
-                    <p class="titulos" style="font-size:7pt;">{{ item.desafio.criacao }}</p>
                     <p class="tema">Tema: <p class="tema-valor">{{ item.desafio.tema }}</p>
-                    <section class="likes">
-                        {% if item.vc == None %}
-                        <a href="/like/d/{{ perfil.id }}/{{ item.desafio.id }}">like!!</a>
-                        <p>{{ item.likes }} pessoas deram like..</p>
+                </div>
+                <section class="likes">
+                    {% if item.vc == None %}
+                    <p>{{ item.likes }} pessoas deram like..</p>
                         {% else %}
                         <p style="font-size: 10pt;">{{ item.vc }}{{ item.likes }} pessoas deram like...</p>
                         {% endif %}
                     </section>
+                    <p class="titulos" style="font-size:8pt;margin-left:80%;">{{ item.desafio.criacao }}</p>
+                </div>
+                
+                
+                {% endfor %}
             </div>
-    
-    
-            {% endfor %}
         </div>
     </div>
     </div></div>
@@ -166,15 +165,15 @@
 
 
     <div id="modal" class="inativo">
-        <h1>Crie seu desafio</h1>
         <div id="bolinha"></div>
         <form action="" method="post" id="moldura" class="inativo">
             {% csrf_token %}
             {{ form }}
             <input class="enviar" type="submit" value="Criar">
         </form>
-    
-      
+        <h1>Crie seu desafio</h1>
+    </div>
+
 </body>
 </html>
 

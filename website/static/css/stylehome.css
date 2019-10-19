@@ -56,19 +56,22 @@ a h4:hover{
 
 }
 .cabecalho{
-   
-   margin-left: 30vw;   
+    align-items: flex-end;
+   display: flex;
+   flex-direction: column;
+   margin-right: 10vw;
+   margin-top:10px;   
    color: #704483;
    font-family: 'Oswald', sans-serif;
   
 }
-.cabecalho p{
+.cabecalho > p{
     color: white;
 }
-.cabecalho img{
+.cabecalho > img{
  border-radius:50%;
- width:100px; 
- height:100px;
+ width:200px; 
+ height:200px;
  }
  
 
@@ -81,7 +84,10 @@ a h4:hover{
     
     }
 
-
+#conteudo{
+    display:flex;
+    flex-direction: column;
+}
 .desafio{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
     padding: 5px 5px;
@@ -141,6 +147,11 @@ footer p, a{
     justify-content: center;
     text-align: center;
 }
+.desafio-geral-conteudo{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
 #icone{
     cursor: pointer;
     padding: 15px;
@@ -152,6 +163,10 @@ label img{
 
 }
 .likes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
     color: #868282;
     font-size: 12px;
 }
@@ -298,7 +313,7 @@ background-color: #9d94a1;
     
     }
     .cabecalho{
-    margin-left: 35vw;
+    margin-right;: 20vw;
         
     }
     
@@ -324,17 +339,17 @@ background-color: #9d94a1;
 
 @media (min-width:480px){
     .cabecalho{
-        margin-left: 39vw;
+        margin-right: 20vw;
     }
 }
 @media (min-width:768px){
         .cabecalho{
-            margin-left: 43vw;
-        }
+            margin-right: 20vw;
+
     } 
 
     @media (min-width:1024px){
         .cabecalho{
-            margin-left: 45vw;
+            margin-right: 20vw;
         }
     } 
