@@ -333,7 +333,8 @@ background-color: #9d94a1;
         flex-direction: row-reverse;
     }
     .cabecalho{
-        margin-right: 10%;
+        margin-right: 5%;
+        margin-left: 5%;
     }
     .desafio{
         width:95%;
@@ -341,9 +342,6 @@ background-color: #9d94a1;
 }
 
 @media (min-width:1024px){
-    .cabecalho{
-        margin-right: 15%;
-    }
     .cabecalho > img{
         height: 200px;
         width: 200px;
