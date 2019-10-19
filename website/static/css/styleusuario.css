@@ -10,16 +10,43 @@ body{
                          'section section section'
                          'footer footer footer';
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 12vh 25vh 55vh 10vh;
+    grid-template-rows: 12vh 40vh 50vh 7vh;
     
+}
+.bloco-desafios{
+    grid-area: section;
+    background-color:#d5bfcb3d;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 15%;
+    width: 70%;
+    }
+.desafios{
+     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+     margin-left: 5%;
+     margin-bottom: 15px;
+     text-align: center;
+     width: 90%;
+     
+    
+   
 }
  header{
      grid-area: header;
  }
 .perfil{
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    color:#979797;
+    background-color: #d5bfcb3d;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 70%;
+    margin-left: 15%;
 }
+
 .perfil div{
     text-align: center;
 }
@@ -29,6 +56,11 @@ body{
 }
 .perfil h3 {
     color: #6f4584;
+}
+.perfil img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
 footer{ 
     align-items: center; 
@@ -79,16 +111,4 @@ footer p a{
     margin-right:35px;
     
 } 
-section{ 
-    background-color: rgb(227, 213, 255, 1);
-    border-radius: 20px;
-    display: flex; 
-    flex-direction: column; 
-    grid-area: section;
-    height: 120px;
-    justify-content: center;
-    margin-left:25%;
-    text-align: center;
-    width: 50%;
-    
-}
+
