@@ -47,13 +47,13 @@
             <div class="desafios-criados">
                 
                 <div class="cabecalho">
-                    <img src="/media/{{ perfil.avatar }}" alt="">
-                    <h1>{{ perfil.nome }}</h1>
                     <form action="/avatar/{{ perfil.id }}" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column; margin-top:10px;">
                         {% csrf_token %}
                         <input type="file" name="avatar">
-                        <input type="submit" value="Mudar avatar" style="margin-top: 10px;">
+                        <input type="submit" value="Mudar avatar" style="margin: 10px 0 15px 0;">
                     </form>
+                    <img src="/media/{{ perfil.avatar }}" alt="">
+                    <h1>{{ perfil.nome }}</h1>
                 </div>
                 <div style="display: flex; flex-direction: column; width: 98%;">
                         <p class="msg">{{ msg }}</p>
