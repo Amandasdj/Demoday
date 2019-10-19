@@ -50,8 +50,8 @@
                     <img src="/media/{{ perfil.avatar }}" alt="">
                     <h1>{{ perfil.nome }}</h1>
                 </div>
-                <p class="msg">{{ msg }}</p>
-                    <div style="display: flex; flex-direction: column; width: 98%;">
+                <div style="display: flex; flex-direction: column; width: 98%;">
+                        <p class="msg">{{ msg }}</p>
                         {% for criado in criados %}
                         <div class="desafio">
                             <p class="respostas" style="margin-left: 60%;">{{ criado.respostas }} respostas</p>
