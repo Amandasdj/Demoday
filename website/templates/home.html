@@ -43,52 +43,45 @@
 
     <div id="conteudo">
 
-        <div class="cabecalho">
-            <img src="/media/{{ perfil.avatar }}" alt="">
-            <h1>{{ perfil.nome }}</h1>
-        </div>
         <div id=seus-desafios>
-            <h2 class="seus-desafios"> SEUS DESAFIOS:</h2>
             <div class="desafios-criados">
                 
-                <div class="seus-desafios">
+                <div class="cabecalho">
+                    <img src="/media/{{ perfil.avatar }}" alt="">
+                    <h1>{{ perfil.nome }}</h1>
                 </div>
-                
                 <p class="msg">{{ msg }}</p>
-                
-                <div>
-                    {% for criado in criados %}
-                    <div class="desafio">
-                        <p class="respostas" style="margin-left: 80%;">{{ criado.respostas }} respostas</p>
-                    <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                        <a href="/desafio/{{ perfil.id}}/{{ criado.desafio.id }}" target="_blank" rel="noopener noreferrer">
-                            <h4>Título: {{ criado.desafio.titulo }}</h4>
-                        </a>
-                        <p class="tema">Tema: <p class=tema-valor>{{ criado.desafio.tema }}</p>
-                    </p>
-                    <p class="titulos">{{ nomeado.desafio.valor }}</p>
-                </div>
-                    
-                    <section class="likes" style="margin-left: 80%;">
-                        {% if criado.like != 'Sem likes!!' %}
-                        likes -
-                        <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer">
-                            {{ criado.like }}
-                        </a>
-                        e mais {{ criado.likes }} pessoas...
-                    </p>
-                    {% else %}
-                    <p>{{ criado.like }}</p>
-                    {% endif %}
-                    </section>
-                    <a href="/delete/{{ perfil.id }}/{{ criado.desafio.id }}" style="padding: 20px;">Excluir</a>
-                    <p class="titulos" style="font-size:8pt;margin-left:40%;">{{ criado.desafio.criacao }}</p>
+                    <div style="display: flex; flex-direction: column; width: 98%;">
+                        {% for criado in criados %}
+                        <div class="desafio">
+                            <p class="respostas" style="margin-left: 60%;">{{ criado.respostas }} respostas</p>
+                            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                                <a href="/desafio/{{ perfil.id}}/{{ criado.desafio.id }}" target="_blank" rel="noopener noreferrer">
+                                    <h4>Título: {{ criado.desafio.titulo }}</h4>
+                                </a>
+                                <p class="tema">Tema: <p class=tema-valor>{{ criado.desafio.tema }}</p>
+                            </p>
+                            <p class="titulos">{{ nomeado.desafio.valor }}</p>
+                            </div>
+                            
+                            <section class="likes" style="margin-left: 60%;">
+                                {% if criado.like != 'Sem likes!!' %}
+                                likes -
+                                <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer">
+                                    {{ criado.like }}
+                                </a>
+                                e mais {{ criado.likes }} pessoas...
+                            </p>
+                            {% else %}
+                            <p>{{ criado.like }}</p>
+                            {% endif %}
+                            </section>
+                            <a href="/delete/{{ perfil.id }}/{{ criado.desafio.id }}" style="padding: 20px;">Excluir</a>
+                            <p class="titulos" style="font-size:8pt;margin-left:40%;">{{ criado.desafio.criacao }}</p>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
-                <p></p>
-                <p></p>
-                <p></p>
             </div>
         </div>
         
