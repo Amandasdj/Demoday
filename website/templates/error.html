@@ -1,21 +1,30 @@
-
-{% load staticfiles %}
+ {% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="{% static 'images/logo-redondo.jpeg'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/styleerror.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
+    <script defer src="{% static 'scripts/index.js' %}"></script>
+    <title>Dare</title>
 </head>
+
 <body>
     <h1>{{ msg }}</h1>
     <script>
-        window.setTimeout(function () {
+        window.setTimeout(function() {
             location.href = "/";
         }, 2000)
     </script>
+
+    <div class="carinha_triste">
+        <img src="{% static '..\static\images\carinha_triste.png'%}" alt="Icone informado um erro na página direcionada, em que, o usuário verá uma emogi de carinha triste">
+    </div>
 </body>
+
 </html>
-    
