@@ -330,7 +330,7 @@ background-color: #9d94a1;
 
 @media (min-width:768px){
     .desafios-criados{
-        flex-direction: row-reverse;
+        flex-direction: row;
     }
     .cabecalho{
         margin-right: 5%;
