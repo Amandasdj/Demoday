@@ -63,6 +63,7 @@ a h4:hover{
    margin-top:10px;   
    color: #704483;
    font-family: 'Oswald', sans-serif;
+   padding: 10px;
   
 }
 .cabecalho > p{
@@ -70,8 +71,8 @@ a h4:hover{
 }
 .cabecalho > img{
  border-radius:50%;
- width:200px; 
- height:200px;
+ width:100px; 
+ height:100px;
  }
  
 
@@ -197,6 +198,7 @@ background-color: #9d94a1;
     background-color: #6f4584;
     display: flex;
     justify-content: space-between;
+    padding: 20px 0 20px 0;
    
 } 
 .nav-base img{
@@ -313,7 +315,7 @@ background-color: #9d94a1;
     
     }
     .cabecalho{
-    margin-right;: 20vw;
+    margin-right: 20vw;
         
     }
     
@@ -346,10 +348,11 @@ background-color: #9d94a1;
         .cabecalho{
             margin-right: 20vw;
 
-    } 
+    }
+}
 
-    @media (min-width:1024px){
-        .cabecalho{
-            margin-right: 20vw;
-        }
-    } 
+@media (min-width:1024px){
+    .cabecalho{
+        margin-right: 20vw;
+    }
+} 
