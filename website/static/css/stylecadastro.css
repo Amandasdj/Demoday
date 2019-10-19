@@ -16,22 +16,23 @@ body{
 }   
 form{
     align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
     background-color:white;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    
+    
 
 }
 
-form input{
-    margin: 5px;
-    height: 30px;
-    border-style: hidden;
-    justify-content: center;
+form input{ 
     background-color: rgba(187, 170, 170, 0.212);
-    border-radius: 30px;
+    border-radius: 30px; 
+    border-style: hidden;
+    height: 30px;
+    justify-content: center;
+    margin: 5px;
     padding-left:30px;
     
 }
@@ -54,12 +55,7 @@ footer p , a{
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
 }
-label{
-    font-family: 'Oswald' , sans-serif;
-    font-size: 20px;
-    color: #6f4584;
-    
-}
+
 input{
     font-size: 20px;
     text-align: center;
@@ -68,10 +64,18 @@ input[type="submit"]{
     background-color: #6f4584;
     color: whitesmoke;
     font-family: 'Oswald' , sans-serif;
-    font-size: 20px;
+    font-size: 20px; 
+     height: 6vh;
     text-decoration-style: dotted;
     margin-top: 40px;
-    height: 6vh;
+  
+}
+label{
+     color: #6f4584;
+    font-family: 'Oswald' , sans-serif;
+    font-size: 20px;
+   
+    
 }
 .nav-base {
     align-items: center;
@@ -90,9 +94,9 @@ input[type="submit"]{
 
 .nav-base p {
     font-family: 'Major Mono Display', monospace;
-    text-decoration-style: solid;
-    font-size: 35px;
+     font-size: 35px;
     margin-right:35px;
+    text-decoration-style: solid;
 }
 
 @media (min-width:400px){
