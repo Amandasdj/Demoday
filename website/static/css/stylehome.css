@@ -56,13 +56,13 @@ a h4:hover{
 
 }
 .cabecalho{
-    align-items: flex-end;
    display: flex;
    flex-direction: column;
    margin-top:10px;   
    color: #704483;
    font-family: 'Oswald', sans-serif;
    padding: 10px;
+   justify-content: center;
   
 }
 .cabecalho > p{

@@ -365,7 +365,7 @@ def avatar(request, id):
                 perfil.save()
 
         return redirect('/home/{}'.format(id))
-        
+
     except:
 
         return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
