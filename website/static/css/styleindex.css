@@ -8,6 +8,10 @@ body {
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 12vh 5vh 50vh 145vh 10vh;
 margin: 0;
+
+    background-image: url('/static/images/logo-bg.png');
+    background-size: 500px;
+    z-index: -1;
 }
 
 .nav-base {

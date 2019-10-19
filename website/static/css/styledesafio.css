@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-image: url('/static/images/logo-bg.png');
+    background-size: 500px;
+    z-index: -1;
+}
 .bloco-resposta a{
     font-family: 'Roboto', sans-serif; 
     margin-top: 10px;

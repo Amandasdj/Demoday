@@ -42,7 +42,7 @@ def cadastrar(request):
             else:
 
                 #Cadastra e acessa home
-                perfil = Perfil(avatar='avatar/plano_de_fundo.png', user=user, sobrenome=sobrenome, nome=nome, email=email, telefone=telefone, senha=senha)
+                perfil = Perfil(avatar='avatar/genie.png', user=user, sobrenome=sobrenome, nome=nome, email=email, telefone=telefone, senha=senha)
                 perfil.save()
                 
                 return redirect('/home/{}'.format(perfil.id))
@@ -234,7 +234,7 @@ def desafio(request, id, id_desafio):
             imagem = request.FILES.get('imagem')
             valor = request.POST.get('texto')
             autor = Perfil.objects.filter(id=id, ativo=True).first() #Buscar perfil do autor
-            filtro = Resposta.objects.filter(valor=valor, autor=autor, desafio=desafio).first()
+            filtro = Resposta.objects.filter(autor=autor, desafio=desafio).first()
 
             if filtro is None:
                 #Criação de uma resposta no banco

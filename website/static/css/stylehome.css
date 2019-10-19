@@ -3,6 +3,11 @@
     font-family: 'Roboto', sans-serif;
    
 }
+body{
+    background-image: url('/static/images/logo-bg.png');
+    background-size: 500px;
+    z-index: -1;
+}
 
 a{color: #704483;
     text-decoration: none;
@@ -51,7 +56,6 @@ a h4:hover{
 
 }
 .cabecalho{
-   
    
    margin-left: 30vw;   
    color: #704483;
