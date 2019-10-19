@@ -1,0 +1,11 @@
+div .carinha_triste {
+    align-items: center;
+    height: 40px;
+    width: 30px;
+    margin-left: 150px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-display: flex;
+}
