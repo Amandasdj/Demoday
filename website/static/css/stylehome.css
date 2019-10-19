@@ -34,7 +34,7 @@ a h4:hover{
      padding: 5px 5px; 
     justify-content: space-between;
 }
-.bloco-desafios-gerais div{
+.bloco-desafios-gerais > div{
     align-items: center;
     margin-top: 10px;
     padding: 5px 5px;
@@ -49,11 +49,31 @@ a h4:hover{
     
    
 }
-.bloco-desafios-respondidos div{
+.bloco-desafios-respondidos  div{
     align-items: center;
      padding: 5px 5px;
     margin-top: 5px;
 
+}
+.botoes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoes > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botoes-mostrar{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #6e4981;
+}
+.botoes-mostrar:hover{
+    cursor: pointer;
+    background-color: #868282;
 }
 .cabecalho{
    display: flex;
@@ -108,7 +128,7 @@ a h4:hover{
    
 }
 
-.desafios-criados div{
+.desafios-criados > div{
     align-items: center;
      padding: 5px 5px;
 }
@@ -141,6 +161,11 @@ footer p, a{
     text-decoration: none;
 }
 
+.gerais{
+    position: relative;
+    transition: 0.8s;
+}
+
 .h2-desafios-gerais{
     color: #704483;
     font-family: 'Oswald', sans-serif;
@@ -149,9 +174,10 @@ footer p, a{
     text-align: center;
 }
 .desafio-geral-conteudo{
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     flex-direction: column;
+    width:400px;
 }
 #icone{
     cursor: pointer;
@@ -293,7 +319,7 @@ background-color: #9d94a1;
         width: 69%;
 
     }
-    .bloco-desafios-gerais div{
+    .bloco-desafios-gerais > div{
         margin-left: 12.5%;
         width: 75%;
 

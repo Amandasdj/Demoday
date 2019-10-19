@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/styledesafiar.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
     <script src="{% static 'scripts/modalCriarDesafio.js' %}" defer></script>
+    <script src="{% static 'scripts/colocarDesafioGeral.js' %}" defer></script>
     <title>Dare</title>
 </head>
 
@@ -78,8 +79,8 @@
                             {% else %}
                             <p>{{ criado.like }}</p>
                             {% endif %}
-                            </section>
-                            <a href="/delete/{{ perfil.id }}/{{ criado.desafio.id }}" style="padding: 20px;">Excluir</a>
+                        </section>
+                        <a href="/delete/{{ perfil.id }}/{{ criado.desafio.id }}" style="padding: 20px;">Excluir</a>
                             <p class="titulos" style="font-size:8pt;margin-left:40%;">{{ criado.desafio.criacao }}</p>
                         </div>
                         {% endfor %}
@@ -88,6 +89,21 @@
             </div>
         </div>
         
+        <div id="responder">
+            <h2 class="h2-desafios-gerais">DESAFIOS GERAIS:</h2>
+            <div class="botoes">
+                <div>
+                    <div class="botoes-mostrar" id="subtrair"></div>
+                    <p style="margin-top: 5px;">Anterior</p>
+                </div>
+                <div>
+                    <div class="botoes-mostrar" id="adicionar"></div>
+                    <p style="margin-top: 5px;">Proximo</p>
+                </div>
+            </div>
+                <div class="bloco-desafios-gerais">
+                </div>
+        </div>
         <h2 class="p-desafios-respondidos">DESAFIOS RESPONDIDOS:</h2>
         <div class="bloco-desafios-respondidos">
             <p></p>
@@ -119,47 +135,15 @@
         
     </div>
     
-    <div id="responder">
-        <h2 class="h2-desafios-gerais">DESAFIOS GERAIS:</h2>
-        <div class="bloco-desafios-gerais">
-            
-            {% for item in gerais %}
-            
-            <div class="desafio-geral">
-                <h4 class="te-desafia">
-                    <img src="/media/{{ item.desafio.autor.avatar }}" alt="" width="60px" height="60px" style="border-radius:50%;">
-                    <a href="/{{ item.desafio.autor.user }}" target="_blank"
-                    rel="noopener noreferrer">{{ item.desafio.autor.user }}</a> te desafia!!
-                </h3>
-                <div class="desafio-geral-conteudo">
-                    <a href="/desafio/{{ perfil.id }}/{{ item.desafio.id }}" target="_blank" rel="noopener noreferrer">
-                        <h4>Título: {{ item.desafio.titulo }}</h4>
-                    </a>
-                    <p class="tema">Tema: <p class="tema-valor">{{ item.desafio.tema }}</p>
-                </div>
-                <section class="likes">
-                    {% if item.vc == None %}
-                    <p>{{ item.likes }} pessoas deram like..</p>
-                        {% else %}
-                        <p style="font-size: 10pt;">{{ item.vc }}{{ item.likes }} pessoas deram like...</p>
-                        {% endif %}
-                    </section>
-                    <p class="titulos" style="font-size:8pt;margin-left:80%;">{{ item.desafio.criacao }}</p>
-                </div>
-                
-                
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    </div></div>
-    <footer>
-        <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com" >Email</a></p>
-        <p>Desenvolvido por alunos da academia Mastertech</p>
-        <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
+</div>
+</div></div>
+<footer>
+    <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com" >Email</a></p>
+    <p>Desenvolvido por alunos da academia Mastertech</p>
+    <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
     </footer>
-
-
+    
+    
     <div id="modal" class="inativo">
         <div id="bolinha"></div>
         <form action="" method="post" id="moldura" class="inativo">
@@ -169,7 +153,56 @@
         </form>
         <h1>Crie seu desafio</h1>
     </div>
-
+    
+    <!-- Bloco para conteúdo de desafios gerais -->
+    <div style="display:none;">
+            {% for item in gerais %}
+            <div class="gerais">
+                <div class="desafio-geral">
+                    <h4 class="te-desafia">
+                        <img src="/media/{{ item.desafio.autor.avatar }}" alt="" width="60px" height="60px" style="border-radius:50%; margin-left: 5%;">
+                        <a href="/{{ item.desafio.autor.user }}" target="_blank"
+                        rel="noopener noreferrer">{{ item.desafio.autor.user }}</a> te desafia!!
+                    </h3>
+                    <div class="desafio-geral-conteudo" style="margin-left: 40%;">
+                            <a href="/desafio/{{ perfil.id }}/{{ item.desafio.id }}" target="_blank" rel="noopener noreferrer">
+                                <h4>Título: {{ item.desafio.titulo }}</h4>
+                            </a>
+                            <p class="tema">Tema: <p class="tema-valor">{{ item.desafio.tema }}</p>
+                        </div>
+                        <section class="likes" style="margin-left: 5%;">
+                                {% if item.vc == None %}
+                                <p>{{ item.likes }} pessoas deram like..</p>
+                        {% else %}
+                        <p style="font-size: 10pt;">{{ item.vc }}{{ item.likes }} pessoas deram like...</p>
+                        {% endif %}
+                    </section>
+                    <p class="titulos" style="font-size:8pt;margin-left:80%;">{{ item.desafio.criacao }}</p>
+                    {% if item.ultima.autor.user != None %}
+                    <div style="align-items: center;background-color:white; border-radius:10px;display:flex;flex-direction: column;margin:0; margin-bottom: 10px; width: 95%;">
+                        <div style="display:flex;flex-direction: row-reverse;align-items: center;margin: 5px 0 0 70%;">
+                            <img src="/media/{{ item.ultima.autor.avatar }}" alt="" width="60px" height="60px" style="border-radius: 50%; margin:5px;">
+                            <h3>
+                                Resposta de 
+                                <a href="/{{ item.ultima.autor.user }}" target="_blank" rel="noopener noreferrer">
+                                    {{ item.ultima.autor.user }}
+                                </a>
+                            </h3>
+                        </div>
+                        <p style="margin:10px;">
+                            {{ item.ultima.valor}}
+                        </p>
+                        <img src="/media/{{ item.ultima.imagem }}" alt="" width="80%">
+                        <p style="font-size: 8pt; margin:10px;">{{ item.ultima.criacao }}</p>
+                    </div>
+                    {% else %}
+                        <p>Sem respostas</p>
+                    {% endif %}
+                </div>   
+        </div>
+        {% endfor %}
+    </div>
+    
 </body>
 </html>
 
