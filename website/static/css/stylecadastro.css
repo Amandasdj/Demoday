@@ -21,9 +21,7 @@ form{
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
-    
+    justify-content: center;  
 
 }
 
@@ -34,17 +32,25 @@ form input{
     color: #6f4584;
     height: 30px;
     justify-content: center;
+    height: 30px;
+  
+}
+label{
+    font-family: 'Oswald' , sans-serif;
+    font-size: 20px;
+    color: #6f4584;
+    margin-top: 5%;
     margin: 5px;
     padding-left:30px;
     
 }
 footer{
- align-items: center;
- background-color: #f1eded;
- display: flex;
- justify-content: space-between;
- margin-top: 10px;
- width: 100%;
+    align-items: center;
+    background-color: #f1eded;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
 }
 footer img{
     margin-right: 5px;
@@ -61,19 +67,20 @@ footer p , a{
 input{
     font-size: 20px;
     text-align: center;
+    margin-top: 5px;
 }
 input[type="submit"]{
     background-color: #6f4584;
     color: whitesmoke;
     font-family: 'Oswald' , sans-serif;
     font-size: 20px; 
-     height: 6vh;
+    height: 6vh;
     text-decoration-style: dotted;
     margin-top: 40px;
   
 }
 label{
-     color: #6f4584;
+    color: #6f4584;
     font-family: 'Oswald' , sans-serif;
     font-size: 20px;
    
@@ -97,16 +104,21 @@ label{
 
 .nav-base p {color: white;
     font-family: 'Major Mono Display', monospace;
-     font-size: 35px;
+    font-size: 35px;
     margin-right:35px;
     text-decoration-style: solid;
 }
 
+
 @media (min-width:400px){
     form{
+        justify-content: space-between;
+        margin-left:10%;
+        margin-top: 30%;
         align-items: center;
         justify-content: center;
         width: 69%;
+
     }
     form input{
         width: 50%;
