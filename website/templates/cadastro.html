@@ -1,13 +1,17 @@
 
- {% load staticfiles %}
+ {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
+=======
+    <link rel="shortcut icon" href="{% static 'images/logo-redondo.jpeg'%}" type="image/x-icon">
+>>>>>>> 7e57f170d89c13ee01b2cb3bd8c2eb727d207f54
     <link rel="stylesheet" href="{% static 'css/stylecadastro.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap"rel="stylesheet">
     <title>Cadastro</title>
@@ -33,7 +37,13 @@
         </footer>  
 
     </form>
+<footer>
+    <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">Email</a></p>
+    <p>Desenvolvido por alunos da academia Mastertech
 
+    </p>
+    <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
+</footer>
 </body>
 </html>
 

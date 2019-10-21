@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    color: whitesmoke;
+    color: #6f4584;
 } 
 
 /*  LABEL: LETRASZINHAS
@@ -8,25 +8,31 @@
     FORM INPUT: BOTOESZINHOS*/
 
 body{
+    align-items: center;
     background-color: #cbbcd2;
-    
-
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }   
 form{
     align-items: center;
-    justify-content: center;
+    background-color:white;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 30px;
+    justify-content: center;
+    
+    
 
 }
 
-form input{
-    margin: 5px;
-    height: 30px;
+form input{ 
+    background-color: rgba(187, 170, 170, 0.212);
+    border-radius: 30px; 
     border-style: hidden;
+    height: 30px;
     justify-content: center;
+<<<<<<< HEAD
     background-color: rgba(187, 170, 170, 0.212);
     border-radius: 30px;
     color: #6f4584;
@@ -37,8 +43,32 @@ label{
     font-size: 20px;
     color: #6f4584;
     margin-top: 5%;
+=======
+    margin: 5px;
+    padding-left:30px;
+>>>>>>> 7e57f170d89c13ee01b2cb3bd8c2eb727d207f54
     
 }
+footer{
+ align-items: center;
+ background-color: #f1eded;
+ display: flex;
+ justify-content: space-between;
+ margin-top: 10px;
+ width: 100%;
+}
+footer img{
+    margin-right: 5px;
+    margin-top: 3px;
+    width: 30px;
+
+}
+footer p , a{
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
 input{
     font-size: 20px;
     text-align: center;
@@ -48,17 +78,27 @@ input[type="submit"]{
     background-color: #6f4584;
     color: whitesmoke;
     font-family: 'Oswald' , sans-serif;
-    font-size: 20px;
+    font-size: 20px; 
+     height: 6vh;
     text-decoration-style: dotted;
     margin-top: 40px;
-    height: 6vh;
+  
+}
+label{
+     color: #6f4584;
+    font-family: 'Oswald' , sans-serif;
+    font-size: 20px;
+   
+    
 }
 .nav-base {
     align-items: center;
     background-color: #6f4584;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
     font-family: 'Major Mono Display', monospace;
+    width: 100%;
 }
 
 .nav-base img {
@@ -68,26 +108,26 @@ input[type="submit"]{
 
 .nav-base p {
     font-family: 'Major Mono Display', monospace;
-    text-decoration-style: solid;
-    font-size: 35px;
+     font-size: 35px;
     margin-right:35px;
+    text-decoration-style: solid;
 }
 
 
 @media (min-width:400px){
     form{
+<<<<<<< HEAD
         justify-content: space-between;
         margin-left:10%;
         margin-top: 30%;
+=======
+        align-items: center;
+        justify-content: center;
+>>>>>>> 7e57f170d89c13ee01b2cb3bd8c2eb727d207f54
         width: 69%;
 
     }
     form input{
-        margin-left: 12.5%;
-        width: 70%;
+        width: 50%;
     }
-    label{
-        margin-left: 10vw;
-    }
-           
 }

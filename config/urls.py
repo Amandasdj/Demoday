@@ -24,10 +24,10 @@ urlpatterns = [
     path('cadastro/', views.cadastrar),
     path('', views.login),
     path('home/<str:id>', views.home),
-    path('home/desafiar/<str:id>', views.desafiar),
     path('delete/<str:id>/<str:id_desafio>/', views.delete_desafio),
     path('desafio/<str:id>/<str:id_desafio>/', views.desafio),
     path('<str:user>', views.usuario),
     path('like/d/<str:id>/<str:id_desafio>', views.like_desafio),
-    path('like/r/<str:id>/<str:id_desafio>', views.like_resposta)
+    path('like/r/<str:id>/<str:id_desafio>', views.like_resposta),
+    path('avatar/<str:id>', views.avatar)
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

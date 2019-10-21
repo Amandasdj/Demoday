@@ -3,6 +3,11 @@
     font-family: 'Roboto', sans-serif;
    
 }
+body{
+    background-image: url('/static/images/logo-bg.png');
+    background-size: 800px;
+    z-index: -1;
+}
 
 a{color: #704483;
     text-decoration: none;
@@ -29,7 +34,7 @@ a h4:hover{
      padding: 5px 5px; 
     justify-content: space-between;
 }
-.bloco-desafios-gerais div{
+.bloco-desafios-gerais > div{
     align-items: center;
     margin-top: 10px;
     padding: 5px 5px;
@@ -44,24 +49,46 @@ a h4:hover{
     
    
 }
-.bloco-desafios-respondidos div{
+.bloco-desafios-respondidos  div{
     align-items: center;
      padding: 5px 5px;
-  margin-top: 5px;
+    margin-top: 5px;
 
 }
+.botoes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoes > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botoes-mostrar{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #6e4981;
+}
+.botoes-mostrar:hover{
+    cursor: pointer;
+    background-color: #868282;
+}
 .cabecalho{
-   
-   
-   margin-left: 30vw;   
+   display: flex;
+   flex-direction: column;
+   margin-top:10px;   
    color: #704483;
    font-family: 'Oswald', sans-serif;
+   padding: 10px;
+   justify-content: center;
   
 }
-.cabecalho p{
+.cabecalho > p{
     color: white;
 }
-.cabecalho img{
+.cabecalho > img{
  border-radius:50%;
  width:100px; 
  height:100px;
@@ -77,14 +104,23 @@ a h4:hover{
     
     }
 
-
+#conteudo{
+    display:flex;
+    flex-direction: column;
+}
 .desafio{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
+    padding: 5px 5px;
+    margin-top:10px;
+    margin-left: 10px;
+    width:90%;
 }
 .desafios-criados{
     background-color:#d5bfcb3d;
     border-radius: 10px;
-    margin: 10px;
+    display:flex;
+    flex-direction: column;
+    margin: 20px;
     padding: 5px 5px; 
     justify-content: space-between;
     
@@ -92,11 +128,9 @@ a h4:hover{
    
 }
 
-.desafios-criados div{
+.desafios-criados > div{
     align-items: center;
      padding: 5px 5px;
-    
-   
 }
 
 .desafio-geral{
@@ -107,32 +141,29 @@ a h4:hover{
 .desafio-respondido{
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1); 
 }
-
-footer{ 
-    align-items: center; 
+footer {
+    align-items: center;
     background-color: #cbbcd2;
     display: flex;
-    bottom: 0;
-    justify-content: space-between; 
-    }
-    
-
-footer img{
+    justify-content: space-between;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+ footer img{
     margin-right: 5px;
     margin-top: 3px;
-    width: 30px;
-}
-
-footer p{
+     width: 30px;
+ }
+footer p, a{
     color: #979797;
-    font-family: 'Montserrat';
-    margin-left: 5px;
-}
-
-footer p a{
-    
-    color: #979797;
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+}
+
+.gerais{
+    position: relative;
+    transition: 0.8s;
 }
 
 .h2-desafios-gerais{
@@ -141,6 +172,12 @@ footer p a{
     display: flex;
     justify-content: center;
     text-align: center;
+}
+.desafio-geral-conteudo{
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    width:400px;
 }
 #icone{
     cursor: pointer;
@@ -153,6 +190,9 @@ label img{
 
 }
 .likes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     color: #868282;
     font-size: 12px;
 }
@@ -183,6 +223,7 @@ background-color: #9d94a1;
     background-color: #6f4584;
     display: flex;
     justify-content: space-between;
+    padding: 20px 0 20px 0;
    
 } 
 .nav-base img{
@@ -278,7 +319,7 @@ background-color: #9d94a1;
         width: 69%;
 
     }
-    .bloco-desafios-gerais div{
+    .bloco-desafios-gerais > div{
         margin-left: 12.5%;
         width: 75%;
 
@@ -298,10 +339,6 @@ background-color: #9d94a1;
 
     
     }
-    .cabecalho{
-    margin-left: 35vw;
-        
-    }
     
     .desafios-criados{
         justify-content: space-between;
@@ -310,12 +347,6 @@ background-color: #9d94a1;
 
         
     }
-    
-    .desafios-criados div{
-        margin-left: 12.5%;
-        width: 75%;
-
-    }
     .msg{
         margin-left: 18%;
         margin-right:50px;
@@ -323,19 +354,22 @@ background-color: #9d94a1;
       }
 }
 
-@media (min-width:480px){
+@media (min-width:768px){
+    .desafios-criados{
+        flex-direction: row;
+    }
     .cabecalho{
-        margin-left: 39vw;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .desafio{
+        width:95%;
     }
 }
-@media (min-width:768px){
-        .cabecalho{
-            margin-left: 43vw;
-        }
-    } 
 
-    @media (min-width:1024px){
-        .cabecalho{
-            margin-left: 45vw;
-        }
-    } 
+@media (min-width:1024px){
+    .cabecalho > img{
+        height: 200px;
+        width: 200px;
+    }
+} 

@@ -1,0 +1,154 @@
+*{ 
+    margin:0;
+    padding: 0;
+   
+}
+a{
+    text-decoration: none;
+    color: #979797;
+
+}
+body{
+    background-image: url('/static/images/logo-bg.png');
+    background-size: 800px;
+    z-index: -1;
+    
+
+    
+}
+.bloco-desafios{
+ 
+    background-color:#d5bfcb3d;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family: 'montserrrat', sans-serif;
+    margin-bottom: 10px;
+    margin-left: 15%;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 70%;    }
+.bloco-desafios h2{
+     color: #6f4584;
+     font-family: 'montserrrat', sans-serif;
+    padding-top: 20px;
+   
+    
+}
+.criacao{
+    color: #baaac1;
+    font-family: 'oswald', sans-serif;
+    font-size:7pt;
+}
+.desafios{
+     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+     margin-left: 5%;
+     margin-bottom: 15px;
+     padding-top: 10px;
+     text-align: center; 
+     width: 90%;
+    
+   
+}
+
+.perfil{
+     background-color: #d5bfcb3d;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:#979797;
+    display: flex;
+    font-family: 'oswald', sans-serif;
+    margin-left: 15%; 
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 70%;
+   
+
+}
+
+.perfil div{
+    text-align: center;
+}
+.perfil h1{
+    font-size: 30px;
+    color: #6f4584;
+}
+.perfil h3 {
+    color: #6f4584;
+}
+.perfil img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+footer{ 
+    align-items: center; 
+    background-color: #cbbcd2;
+    
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+  
+    
+    }
+    
+
+footer img{
+    margin-right: 5px;
+    margin-top: 3px;
+    width: 30px;
+}
+
+footer p{
+    color: #979797;
+    font-family: 'Montserrat';
+    margin-left: 5px;
+
+}
+
+footer p a{
+    color: #979797;
+    text-decoration: none;
+}
+.nav-base { align-items: center;
+    background-color: #6f4584;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-base img{
+    margin-left: 2px;
+    width: 60px;
+   
+    
+}
+.nav-base p{
+    color: white;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 35px;
+    margin-right:35px;
+    
+} 
+.tema{
+    color: #6f4584;
+
+}
+.tema-valor{
+    color: #979797;
+}
+
+@media (min-width:900px){
+    .bloco-desafios h2{
+        font-size: 18pt;
+    }
+
+    a{
+        font-size: 14pt;
+
+    }
+    .criacao{
+        font-size: 10pt;
+    }
+    .tema{
+        font-size: 13pt;
+    }
+}

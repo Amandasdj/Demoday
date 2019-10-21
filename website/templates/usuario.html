@@ -1,36 +1,63 @@
-
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styleusuario.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap"
+        rel="stylesheet">
+    <title>Usuario</title>
 </head>
-<body>
-    <div style="margin: 40px;">
-        <h1>{{ perfil.user }}</h1>
-        <h3>{{ perfil.nome}} {{perfil.sobrenome}}</h3>
-        <p>{{ perfil.email }}</p>
-        <p>"{{ perfil.mensagem }}"</p>
-    
-        {% for desafio in desafios %}
-            <div style="border: solid 1px black; margin: 5px; width: 200px; padding: 5px;">
-    
-                <a href="/desafio/{{ desafio.id }}" target="_blank" rel="noopener noreferrer">
-                    <h4>- {{ desafio.titulo }}</h4>
-                </a>
-                <p>Tema: {{ desafio.tema }}</p>
-                <p>{{ desafio.valor }}</p>
-                <p style="font-size:7pt;">{{ desafio.criacao }}</p>
-                <a href="responder/{{ perfil.id }}/{{ desafio.id }}">Responder</a>
-                <a href="/like/d/{{ perfil.id }}/{{ desafio.id }}" style="font-size: 10pt;">Dar like - {{ desafio.likes }}</a>
-            </div> 
-             {% endfor %}
-    </div>
-</body>
-</html>
-    
-      
 
+<body>
+    <nav class="nav-base"><img src="{% static 'images/logo-redondo.jpeg'%}" alt="">
+        <p>Dare</p>
+        <p></p>
+    </nav>
+
+    <header class="perfil">
+        <p></p>
+        <div>
+            <img src="media/{{ perfil.avatar }}" alt="">
+            <h1>{{ perfil.user }}</h1>
+            <h3>{{ perfil.nome}} {{perfil.sobrenome}}</h3>
+            <p>{{ perfil.email }}</p>
+            <p>{{ perfil.mensagem }}</p>
+        </div>
+        <p></p>
+
+    </header>
+
+    <div class="bloco-desafios">
+        <h2>Desafios</h2>
+        {% for desafio in desafios %}
+
+        <div class="desafios">
+           
+            <a href="/desafio/{{ desafio.id }}"  rel="noopener noreferrer">
+                <h4>Título: {{ desafio.titulo }}</h4>
+            </a>
+            <p class="criacao" >{{ desafio.criacao }}</p>
+            <p class="tema">Tema: <p class="tema-valor">{{ desafio.tema }}</p></p>
+            
+            
+        </div>
+
+
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p><a href="https://mail.google.com/mail/u/0/?hl=pt-BR&view=cm&tf=1&fs=1&to=amanda_sj12%40hotmail.com">Email</a>
+        </p>
+        <p>Desenvolvido por alunos da academia Mastertech
+
+        </p>
+        <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
+    </footer>
+</body>
+
+</html>
