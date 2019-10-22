@@ -9,22 +9,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{% static 'images/logoo.png'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/styleerror.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
-    <script defer src="{% static 'scripts/index.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <title>Error</title>
 </head>
 
+
+
 <body>
-    <h1>{{ msg }}</h1>
-    <script>
-        window.setTimeout(function() {
-            location.href = "/";
-        }, 2000)
-    </script>
 
     <div class="carinha_triste">
-        <img src="{% static '..\static\images\carinha_triste.png'%}" alt="Icone informado um erro na página direcionada, em que, o usuário verá uma emogi de carinha triste">
+        <img src="{% static 'images/cancel.png'%}" alt="Icone informado um erro na página direcionada, em que, o usuário verá uma emogi de carinha triste">
     </div>
+
+    <h1>Ops, o seu desafio agora é encontrar essa página!!!</h1>
+
 </body>
+
+
 
 </html>

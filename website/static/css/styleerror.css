@@ -1,11 +1,19 @@
-div .carinha_triste {
+.carinha_triste{
+    display: flex;
     align-items: center;
-    height: 40px;
-    width: 30px;
-    margin-left: 150px;
+    justify-content: center;
+    margin: 6%;
 }
-
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    background-color: rgb(204, 185, 223);
+    font-family: 'Quicksand', sans-serif;
     font-display: flex;
+    font-size: 20pt;
+    color:rgb(104, 38, 180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    
 }
