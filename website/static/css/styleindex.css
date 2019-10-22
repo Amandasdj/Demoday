@@ -37,7 +37,7 @@ margin: 0;
 }
 
 .menu {
-    background-color: #b7a4b8;
+    background-color: #b9a6b9;
     grid-area: navmenu;
     display: inline;
 }
@@ -326,6 +326,10 @@ section{
 .img-1{
     margin-left: 30%;
  }
+ .menu label img {
+    width: 40px;
+    
+}
  .menu .cadastre-se{
      font-size: 20px;
  }
@@ -344,7 +348,7 @@ section{
     font-size: 30px;   
  }
  section h6{
-    margin-top: -50px;
+    margin-top: -60px;
     
 }
  section img {
