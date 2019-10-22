@@ -23,8 +23,8 @@ margin: 0;
 }
 
 .nav-base img {
-    margin-left: 35%;
-    width: 100px;
+    margin-left: 40%;
+    width: 80px;
     
 }
 
@@ -167,13 +167,13 @@ form input {
 }
  .fluxograma{
      width: 75%;
-     margin-left: 12.5%;
+     margin:12.5%;
  }
 
 section {
     
     grid-area: section;
-    margin-top: -330px;
+    margin-top: -280px;
 }
 
 section img {
@@ -184,13 +184,7 @@ section img {
     margin-left: 30%;
 }
 
-@media(min-width:710px) {
-    section img {
-        align-items: center;
-        margin-top: 10px;
-        margin-left: 210px;
-    }
-}
+
 
 section h1,
 h4, h6{
@@ -200,6 +194,7 @@ h4, h6{
 
 section p {
     margin: 18px;
+    text-align: center;
 }
 
 .politica{
@@ -232,28 +227,76 @@ footer p a {
     text-decoration: none;
 }
 @media(min-width:480px){
-    section{
-        margin-top: -80px;} 
     .banner h3{
         font-size: 16px;
+           width: 200px;
+           
+    } 
+   .fluxograma{
+    margin-top: -20px;
+   }
+   h6{
+       margin-top: -60px;
+   }
+    .nav-base img {
+        margin-left: 2px;
+        width: 80px;
+        
     }
+    .nav-base p{
+        display: flex;
+    }
+    .menu label img {
+        width: 30px;
+        margin-left: 25px;
+        
+    }
+    
+    section{
+        margin-top: -200px;} 
+        
+   
+    }
+    section h4{
+        margin-top: 40px;
+       
+    }
+    section img {
+        
+        margin-left: 100px;
     }
    
     @media(min-width:640px){
-        section{
-            margin-top: -50px;
-        }
+        
         .banner h3{
             font-size: 18px;
+            width: 300px;
+                   
+        
         }
+    }
+    h6{
+        font-size: 13pt;
+    }
+    .politica{
+        font-size: 12pt;
     }
     
 
 @media(min-width:710px){
+    .img-1{
+        margin-left: 25%;
+     }
 
 section{
-    margin-top: 0;
+    margin-top: -120px;
 }
+
+    section img {
+    
+        margin-left: 100px;
+    }
+
 .banner h3{
     
     font-size: 20px;
@@ -261,11 +304,23 @@ section{
 }
 }
 @media(min-width:1024px){
+   
     .banner h3{
-        
+        width: 800px;
         font-size: 25px;
+        margin-left: 70px;
+        
+    } 
+    body{
+        grid-template-rows: 12vh 5vh 82.5vh 250vh 10vh;
         
     }
+    .fluxograma{
+        width: 40%;
+        margin-left: 30%;
+
+    }
+     
 .img-1{
     margin-left: 30%;
  }
@@ -275,10 +330,15 @@ section{
  .menu .link{
      font-size: 15px;
  }
+
+ section{
+    margin-top: 2px;
+ }
  section h1{
     font-size: 60px;
  }
  section h4{
+     margin-top: 60px;
     font-size: 30px;   
  }
  section h6{
@@ -290,7 +350,7 @@ section{
  }
 section p{
     
-    font-size: 20px;
+    font-size: 30px;
     margin-right: 15px;
     margin-left: 15%;
     text-align: center;
