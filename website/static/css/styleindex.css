@@ -191,7 +191,9 @@ h4, h6{
     color: #704483;
     text-align: center;
 }
-
+section h6{
+    margin-top: -30px;
+}
 section p {
     margin: 18px;
     text-align: center;
