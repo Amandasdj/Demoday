@@ -99,12 +99,12 @@ def home(request, id):
 
             #Entregar uma lista de dicionários como contexto
             if len(likes) != 0: #Se tiver likes
-                ultimo = likes.first() #Ultimo perfil que deu like
+                ultimo = likes.last() #Ultimo perfil que deu like
 
                 #Adicionar um dicionário ao array
                 respostas_likes.append({
                     'resposta':resposta,
-                    'like':ultimo.perfil.user,
+                    'like':ultimo.perfil,
                     'likes': len(likes) #Quantidade de likes
                     })
 
@@ -151,13 +151,13 @@ def home(request, id):
 
             #Entregar uma lista de dicionários como contexto
             if len(likes) != 0: #Se houver likes
-                ultimo = likes.first() #Ultimo perfil a dar like
+                ultimo = likes.last() #Ultimo perfil a dar like
 
                 #Adicionar ao Array pra ser entregue como contexto
                 criados.append({
                     'desafio':desafio,
                     'respostas': len(respostas), #Quantidade de respostas
-                    'like':ultimo.perfil.user,
+                    'like':ultimo.perfil,
                     'likes': len(likes) #Quantidade de likes
                     })
 
@@ -223,11 +223,28 @@ def home(request, id):
 #Página de um desafio
 def desafio(request, id, id_desafio):
     
-    try:
+    # try:
         desafio = Desafio.objects.filter(id=id_desafio, ativo=True).first() #Buscar desafio
         respostas = Resposta.objects.filter(desafio__id=id_desafio, ativo=True) #Buscar respostas do desafio
         likes = Like.objects.filter(correspondente=id_desafio) #Buscar likes
-        ultimo = likes.first() #Ultimo perfil a dar like
+        likes_respostas = []
+
+        #Pegar os likes das respostas
+        for resposta in respostas:
+
+            l = Like.objects.filter(correspondente=resposta.id)
+            ultimo = l.last()
+
+            likes_respostas.append({
+                'resposta':resposta,
+                'likes':len(l),
+                'ultimo':ultimo
+            })
+
+        ultimo = False
+
+        if len(likes) != 0:
+            ultimo = likes.last() #Ultimo perfil a dar like
 
         #Entrega formulário
         form = RespostaForm()
@@ -251,37 +268,40 @@ def desafio(request, id, id_desafio):
         if  len(likes) != 0 and (filtro is None and desafio.autor.id != perfil.id): 
             context = {
 
+                'perfil':perfil.id,
                 'desafio':desafio,
-                'respostas':respostas,
+                'respostas':likes_respostas,
                 'likes':len(likes),
-                'like':ultimo.perfil.user,
+                'like':ultimo,
                 'form':form
             }
         elif filtro is None and desafio.autor.id != perfil.id:
             context = {
 
+                'perfil':perfil.id,
                 'desafio':desafio,
-                'respostas':respostas,
+                'respostas':likes_respostas,
                 'likes':len(likes),
-                'like':"sem likes",
+                'like':ultimo,
                 'form':form
             }
         else:
             context = {
 
+                'perfil':perfil.id,
                 'desafio':desafio,
-                'respostas':respostas,
+                'respostas':likes_respostas,
                 'likes':len(likes),
-                'like':"sem likes",
+                'like':ultimo,
                 'respondido':True
             }
                 
 
         return render(request, 'desafio.html', context)
 
-    except:
+    # except:
         
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
 
 #Página de um Perfil
 def usuario(request, user):
@@ -318,26 +338,26 @@ def like_desafio(request, id, id_desafio):
             like = Like(correspondente=id_desafio, perfil=perfil)
             like.save()
 
-        return redirect('/home/{}'.format(id))
+        return redirect('/desafio/{}/{}'.format(id, id_desafio))
     
     except:
 
         return render(request, 'error.html')
 
-def like_resposta(request, id, titulo, user):
+def like_resposta(request, id, id_resposta):
     try:
-        resposta = Resposta.objects.filter(id=id, ativo=True).first() #Buscar resposta
-        filtro = Resposta.objects.filter(id=id, likes__perfil__id=user).first() #Buscar like já existente
+        resposta = Resposta.objects.filter(id=id_resposta, ativo=True).first() #Buscar resposta
+        filtro = Like.objects.filter(correspondente=id_resposta, perfil__id=id).first() #Buscar like já existente
 
         if filtro is None:
-            perfil = Perfil.objects.filter(id=user).first() #Buscar perfil do like
+            perfil = Perfil.objects.filter(id=id).first() #Buscar perfil do like
 
             #Salvar like no banco
             like = Like(perfil=perfil, correspondente=resposta.id)
             like.save()
-
-            return redirect('/desafio/{}'.format(resposta.desafio.id))
     
+        return redirect('/desafio/{}/{}'.format(id, resposta.desafio.id))
+
     except:
 
         return render(request, 'error.html')

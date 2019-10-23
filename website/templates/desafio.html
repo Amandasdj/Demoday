@@ -23,20 +23,25 @@
     <div class="desafio"> 
         {% if not respondido %}
         <div style="display: flex; width: 100%; justify-content: space-around; margin: 5%;">
-            <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; margin: 5%;">
-                            <img src="/media/{{ desafio.autor.avatar }}" alt="" width="20%" style="border-radius:50%;">
+            <div style="display: flex; flex-direction: column; height: 60px;">
+                    <div style="display: flex; align-items: center; margin: 5% 0 0 0;">
+                            <img src="/media/{{ desafio.autor.avatar }}" alt="" width="10%" style="border-radius:50%;">
                             <a href="/{{ desafio.autor.user }}" target="_blank" rel="noopener noreferrer" style="margin-left: 1%;">{{ desafio.autor.user }}</a>
-                        </div>
+                            <p style="margin:0 0 0 1%;">espera que você responda...</p>
+                    </div>
                         <h1>{{ desafio.titulo }}</h1>
                         <h2>Tema: {{ desafio.tema }}</h2>
                         <p class="descricao" style="margin: 10%;">{{ desafio.valor }}</p>
-                        <p>likes - 
-                            <a href="/{{like}}" target="_blank" rel="noopener noreferrer">
-                                {{like}}
+                        <a href="/like/d/{{ perfil }}/{{ desafio.id }}" style="margin: 8% 1% 8% 0; width: 80px;"> Dar like!!!</a> 
+                        {% if like != False %}
+                        <p>
+                            <a href="/{{like.perfil.user}}" target="_blank" rel="noopener noreferrer">
+                                <img src="/media/{{ like.perfil.avatar }}" alt="" width="16px" style="border-radius: 50%;"> 
+                                {{like.perfil.user}}
                             </a>
-                            e mais {{ likes }} pessoas...
+                            e mais {{ likes }} pessoas deram like...
                         </p>
+                        {% endif %}
             </div>
             
                 <form action="" method="post" enctype="multipart/form-data">
@@ -47,19 +52,23 @@
             </div>
             {% else %}
             <div style="display: flex; flex-direction: column; width: 50%;">
-                    <p style="margin-left: 50%;">likes - 
-                        <a href="/{{like}}" target="_blank" rel="noopener noreferrer">
-                            {{like}}
+                    {% if like != False %}
+                    <p style="margin-left: 70%; width: 70%;">
+                        <a href="/{{like.perfil.user}}" target="_blank" rel="noopener noreferrer">
+                            <img src="/media/{{ like.perfil.avatar }}" alt="" width="16px" style="border-radius: 50%;">
+                            {{like.perfil.user}}
                         </a>
-                        e mais {{ likes }} pessoas...
+                        e mais {{ likes }} pessoas deram like...
                     </p>
-                    <div style="display: flex; align-items: center;">
-                        <img src="/media/{{ desafio.autor.avatar }}" alt="" width="20%" style="border-radius:50%;">
-                        <a href="/{{ desafio.autor.user }}" target="_blank" rel="noopener noreferrer" style="margin-left:1%;">{{ desafio.autor.user }}</a>
-                    </div>
-                    <h1>{{ desafio.titulo }}</h1>
-                    <h2>Tema: {{ desafio.tema }}</h2>
-                    <p class="descricao" style="margin: 10%;">{{ desafio.valor }}</p>
+                    {% endif %}
+                        <div style="display: flex; align-items: center; margin-right: 60%;">
+                            <img src="/media/{{ desafio.autor.avatar }}" alt="" width="20%" style="border-radius:50%;">
+                            <a href="/{{ desafio.autor.user }}" target="_blank" rel="noopener noreferrer" style="margin-left:1%;">{{ desafio.autor.user }}</a>
+                        </div>
+                        <h1>{{ desafio.titulo }}</h1>
+                        <h2>Tema: {{ desafio.tema }}</h2>
+                        <p class="descricao" style="margin: 10%;">{{ desafio.valor }}</p>
+                        <a href="/like/d/{{ perfil }}/{{ desafio.id }}" style="margin: 5%; width: 80px;"> Dar like!!!</a> 
                 </div>
             {% endif %}
     </div>
@@ -91,16 +100,30 @@
         <p><img src="{% static 'images/estacao-logo.png'%}" alt=""></p>
     </footer>
     <div style="display: none;">
-        {% for resposta in respostas %}
+        {% for elem in respostas %}
             <div class="bloco-resposta" style="display: flex; flex-direction: column; align-items: center;">
-                <div style="display:flex;align-items:center;margin:1% 50% 1% 0;">
-                    <img src="/media/{{ resposta.autor.avatar }}" width="60px" height="60px" style="border-radius:50%;" alt="">
-                    <a href="/{{ resposta.autor.user }}" target="_blank" rel="noopener noreferrer" style="margin-left: 1%;">{{ resposta.autor.user }}</a>
+                 <div style="display:flex;align-items:center;margin:1% 50% 1% 0;">
+                        <img src="/media/{{ elem.resposta.autor.avatar }}" width="60px" height="60px" style="border-radius:50%;" alt="">
+                        <a href="/{{ elem.resposta.autor.user }}" target="_blank" rel="noopener noreferrer">
+                            {{ elem.resposta.autor.user }}
+                        </a>
+                        <p style="margin-left: 3%;">responde...</p>
+                    </div>
+                    <p>Resposta: {{ elem.resposta.valor }}</p>
+                    <a href="/like/r/{{ perfil }}/{{ elem.resposta.id }}" style="margin: 5% 0 5% 0;">Dar like!!!!</a>
+                {% if elem.likes != 0%}
+                <div style="align-items:center; display: flex; width: 30%; margin: 0 1% 0 60%;">
+                        <a href="/{{ elem.ultimo.perfil.user }}" style="margin-right: 1%;">
+                        <img src="/media/{{ elem.ultimo.perfil.avatar}}" alt="" width="16px" style="border-radius: 50%;">
+                        {{ elem.ultimo.perfil.user }}
+                    </a>
+                    <p>
+                        e mais {{ elem.likes }} pessoas..
+                    </p>
                 </div>
-                <a href="/like/r/{{ resposta.id }}" style="font-size: 10pt; margin-left: 30%;">likes - {{ resposta.likes.perfil.user }} e mais {{ resposta.total }} pessoas..</a>
-                <img src="/media/{{ resposta.imagem }}" alt="" width="50%" style="margin: 15px">
-                <p>Resposta: {{ resposta.valor }}</p>
-                <p style="font-size:7pt;">{{ resposta.desafio.criacao }}</p>
+                {% endif %}
+                <img src="/media/{{ elem.resposta.imagem }}" alt="" width="40%" style="margin: 15px">
+                <p style="font-size:7pt;">{{ elem.resposta.desafio.criacao }}</p>
             </div>
         {% endfor %}
     </div>

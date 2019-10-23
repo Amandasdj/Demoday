@@ -191,7 +191,6 @@ label img{
 }
 .likes{
     display: flex;
-    flex-direction: column;
     justify-content: flex-end;
     color: #868282;
     font-size: 12px;

@@ -68,14 +68,15 @@
                             <p class="titulos">{{ nomeado.desafio.valor }}</p>
                             </div>
                             
-                            <section class="likes" style="margin-left: 45%;">
+                        <section class="likes" style="margin-right: 30%; display: flex; align-items: center; height: 25px;">
                                 {% if criado.like != 'Sem likes!!' %}
-                                likes -
-                                <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer">
-                                    {{ criado.like }}
+                                <a href="/{{ criado.like.user }}" target="_blank" rel="noopener noreferrer" style="margin-right: 1%; display: flex; align-items: center;">
+                                    <img src="/media/{{ criado.like.avatar }}" alt="" width="16px" style="border-radius: 50%;">
+                                    {{ criado.like.user }}
                                 </a>
-                                e mais {{ criado.likes }} pessoas...
-                            </p>
+                                <p style="margin:0;">
+                                    e mais {{ criado.likes }} pessoas deram like...
+                                </p>
                             {% else %}
                             <p>{{ criado.like }}</p>
                             {% endif %}
@@ -117,11 +118,13 @@
                     <p class=titulos-respondidos style="font-size:8pt;">{{ elem.resposta.desafio.criacao }}</p>
                     <section class="likes">
                         {% if elem.like != 'Sem likes!!' %}
-                        likes -
-                        <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer">
-                            {{ elem.like }}
+                        <a href="/{{ criado.like }}" target="_blank" rel="noopener noreferrer" style="margin-right: 1%; display: flex; align-items: center;">
+                            <img src="/media/{{ elem.like.avatar }}" alt="" width="16px" style="border-radius: 50%;">
+                            {{ elem.like.user }}
                         </a>
-                        e mais {{ elem.likes }} pessoas...
+                        <p>
+                            e mais {{ elem.likes }} pessoas deram like...
+                        </p>
     
                         {% else %}
                         <p>{{ elem.like }}</p>
@@ -169,9 +172,9 @@
                             </a>
                             <p class="tema">Tema: <p class="tema-valor">{{ item.desafio.tema }}</p>
                         </div>
-                        <section class="likes" style="margin-left: 5%;">
-                                {% if item.vc == None %}
-                                <p>{{ item.likes }} pessoas deram like..</p>
+                        <section class="likes" style="margin-right: 85%;">
+                        {% if item.vc == None %}
+                            <p>{{ item.likes }} pessoas deram like..</p>
                         {% else %}
                         <p style="font-size: 10pt;">{{ item.vc }}{{ item.likes }} pessoas deram like...</p>
                         {% endif %}
