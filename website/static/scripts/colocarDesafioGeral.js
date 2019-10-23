@@ -26,27 +26,27 @@ const colocarElementoEmGerais = (ind) => {
 const trocarElementoEmGerais = (event) => {
     
     const blocoDesafiosGerais = document.querySelector('.bloco-desafios-gerais')
-    const paraRemover = blocoDesafiosGerais.firstElementChild
+    const paraRemover = blocoDesafiosGerais.lastElementChild
+    
+    console.log(paraRemover)
     
     paraRemover.className = 'inativo'
 
-    setTimeout(() => {
 
-        paraRemover.remove()
-        
-        if(event.target.id == 'subtrair'){
-            
-            i--
-            
-            return colocarElementoEmGerais(i)
-        }
-        else{
-            
-            i++
+    paraRemover.remove()
     
-            return colocarElementoEmGerais(i)
-        }
-    }, 500)
+    if(event.target.id == 'subtrair'){
+        
+        i--
+        
+        return colocarElementoEmGerais(i)
+    }
+    else{
+        
+        i++
+
+        return colocarElementoEmGerais(i)
+    }
     
 }
 const atribuir = () => {
