@@ -6,7 +6,7 @@ body {
                          'section section section section'
                          'footer footer footer footer';
 grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 12vh 5vh 50vh 145vh 10vh;
+grid-template-rows: 12vh 5vh 82.5vh 145vh 10vh;
 margin: 0;
 
     background-image: url('/static/images/logo-bg.png');
@@ -23,8 +23,9 @@ margin: 0;
 }
 
 .nav-base img {
-    margin-left: 2px;
-    width: 60px;
+    margin-left: 40%;
+    width: 80px;
+    
 }
 
 .nav-base p {
@@ -32,10 +33,11 @@ margin: 0;
     font-family: 'Major Mono Display', monospace;
     font-size: 35px;
     margin-right: 35px;
+    display: none;
 }
 
 .menu {
-    background-color: #b7a4b8;
+    background-color: #b9a6b9;
     grid-area: navmenu;
     display: inline;
 }
@@ -99,7 +101,7 @@ header {
 
 .menu label img {
     width: 30px;
-    margin-left: 15px;
+    
 }
 
 .menu label label {
@@ -138,35 +140,45 @@ header {
    
         background-image: url('../images/banner-grande.jpg');
         grid-area: header; 
-        background-size: 100%;
+        background-size: 160%;
         background-repeat: no-repeat;
-        
+       
    }
 
-.banner{
-    justify-content: space-between;
+.banner{ padding-left: 10px;
+
 }
 .banner h3{
     
         color: white;
         display: flex;
        font-size: 10px; 
+       font-family: 'Dancing Script', cursive;
+       font-weight: lighter;
        margin-top: 20%;
-       
+       width: 150px;
+       text-align: center;
       
 
 
 }
-
+h1{
+    font-family: 'Major Mono Display', monospace;
+}
 form input {
     margin: 5px;
     width: 150px
 }
+ .fluxograma{
+     width: 75%;
+     margin:12.5%;
+ }
 
 section {
     
     grid-area: section;
-    margin-top: -150px;
+    margin-top: -280px;
+    font-family:'Montserrat', sans-serif;
 }
 
 section img {
@@ -177,22 +189,19 @@ section img {
     margin-left: 30%;
 }
 
-@media(min-width:710px) {
-    section img {
-        align-items: center;
-        margin-top: 10px;
-        margin-left: 210px;
-    }
-}
+
 
 section h1,
 h4, h6{
     color: #704483;
     text-align: center;
 }
-
+section h6{
+    margin-top: -30px;
+}
 section p {
     margin: 18px;
+    text-align: center;
 }
 
 .politica{
@@ -225,28 +234,76 @@ footer p a {
     text-decoration: none;
 }
 @media(min-width:480px){
-    section{
-        margin-top: -80px;} 
     .banner h3{
         font-size: 16px;
+           width: 200px;
+           
+    } 
+   .fluxograma{
+    margin-top: -20px;
+   }
+   h6{
+       margin-top: -60px;
+   }
+    .nav-base img {
+        margin-left: 2px;
+        width: 80px;
+        
     }
+    .nav-base p{
+        display: flex;
+    }
+    .menu label img {
+        width: 30px;
+        margin-left: 25px;
+        
+    }
+    
+    section{
+        margin-top: -200px;} 
+        
+   
+    }
+    section h4{
+        margin-top: 40px;
+       
+    }
+    section img {
+        
+        margin-left: 100px;
     }
    
     @media(min-width:640px){
-        section{
-            margin-top: -50px;
-        }
+        
         .banner h3{
             font-size: 18px;
+            width: 300px;
+                   
+        
         }
+    }
+    h6{
+        font-size: 13pt;
+    }
+    .politica{
+        font-size: 12pt;
     }
     
 
 @media(min-width:710px){
+    .img-1{
+        margin-left: 25%;
+     }
 
 section{
-    margin-top: 0;
+    margin-top: -120px;
 }
+
+    section img {
+    
+        margin-left: 100px;
+    }
+
 .banner h3{
     
     font-size: 20px;
@@ -254,28 +311,49 @@ section{
 }
 }
 @media(min-width:1024px){
+   
     .banner h3{
+        width: 800px;
+        font-size: 40px;
+        margin-left: 70px;
         
-        font-size: 25px;
+    } 
+    body{
+        grid-template-rows: 12vh 5vh 82.5vh 250vh 10vh;
         
     }
+    .fluxograma{
+        width: 40%;
+        margin-left: 30%;
+
+    }
+     
 .img-1{
     margin-left: 30%;
  }
+ .menu label img {
+    width: 40px;
+    
+}
  .menu .cadastre-se{
      font-size: 20px;
  }
  .menu .link{
      font-size: 15px;
  }
+
+ section{
+    margin-top: 2px;
+ }
  section h1{
     font-size: 60px;
  }
  section h4{
+     margin-top: 60px;
     font-size: 30px;   
  }
  section h6{
-    margin-top: 150px;
+    margin-top: -60px;
     
 }
  section img {
@@ -283,7 +361,7 @@ section{
  }
 section p{
     
-    font-size: 20px;
+    font-size: 30px;
     margin-right: 15px;
     margin-left: 15%;
     text-align: center;

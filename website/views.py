@@ -51,7 +51,7 @@ def cadastrar(request):
     
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 def login(request):
     
@@ -73,13 +73,13 @@ def login(request):
 
             else:
 
-                return render(request, 'index.html', {'msg':'*Email ou senha inválidos', 'login':form})
+                return render(request, 'index.html')
 
         return render(request, 'index.html', {'login':form})
 
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 def home(request, id):
     try:
@@ -217,7 +217,7 @@ def home(request, id):
             return render(request, 'home.html', context)
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 
 #Página de um desafio
@@ -281,7 +281,7 @@ def desafio(request, id, id_desafio):
 
     except:
         
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 #Página de um Perfil
 def usuario(request, user):
@@ -303,7 +303,7 @@ def usuario(request, user):
             return render(request, 'usuario.html', context)
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 #Fazer um like em um desafio
 def like_desafio(request, id, id_desafio):
@@ -322,7 +322,7 @@ def like_desafio(request, id, id_desafio):
     
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 def like_resposta(request, id, titulo, user):
     try:
@@ -340,7 +340,7 @@ def like_resposta(request, id, titulo, user):
     
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 def delete_desafio(request, id, id_desafio):
     try:
@@ -356,7 +356,7 @@ def delete_desafio(request, id, id_desafio):
             return redirect('/home/{}'.format(id))
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
 
 def avatar(request, id):
     try:
@@ -371,4 +371,4 @@ def avatar(request, id):
 
     except:
 
-        return render(request, 'error.html', {'msg':'Oops, ação inválida... Estamos te redirecionando para a página principal do site..'})
+        return render(request, 'error.html')
