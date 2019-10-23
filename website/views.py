@@ -48,14 +48,14 @@ def cadastrar(request):
                 return redirect('/home/{}'.format(perfil.id))
 
         return render(request, 'cadastro.html', {'cadastro':form})
-    
-    except:
 
-        return render(request, 'error.html')
+    # except:
+
+    #     return render(request, 'error.html')
 
 def login(request):
     
-    try:
+    # try:
         #Entregar form como contexto
         form = LoginForm()
 
