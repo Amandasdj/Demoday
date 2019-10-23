@@ -90,7 +90,6 @@
         </div>
         
         <div id="responder">
-            <h2 class="h2-desafios-gerais">DESAFIOS GERAIS:</h2>
             <div class="bloco-desafios-gerais">
                 <div class="botoes">
                     <div>
@@ -196,7 +195,9 @@
                         <p style="font-size: 8pt; margin:10px;">{{ item.ultima.criacao }}</p>
                     </div>
                     {% else %}
-                        <p>Sem respostas</p>
+                        <div style="align-items: center;background-color:white; border-radius:10px;display:flex;flex-direction: column;margin:0; margin-bottom: 10px; width: 95%;">
+                            <img src="{% static 'images/sem-resposta.png' %}" alt="" width="80%">
+                        </div>
                     {% endif %}
                 </div>   
         </div>

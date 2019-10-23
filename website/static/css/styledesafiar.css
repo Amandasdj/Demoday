@@ -19,12 +19,17 @@
 input{
     border-color: rgb(220, 203, 203);
     border-style: solid;
-    border-radius: 7px;
-    height: 20px;
-  
+    border-radius: 15px;
+    height: 25px;
     justify-content: center;
+    margin: 2%;
+    padding: 2px;
     width: 250px;
 
+}
+input[type='text']{
+    border-radius: 20px;
+    padding: 10px;
 }
 #moldura{ align-items: center;
     background-color: rgb(220, 203, 203);
@@ -82,8 +87,9 @@ label{
     cursor: pointer;
 }
 textarea{
-    border-radius: 10px;
+    border-radius: 20px;
     border-color: rgb(220, 203, 203);
+    padding: 10px;
 }
 
 @media (min-width:500px){
@@ -122,6 +128,7 @@ textarea{
         font-size: 16px;
     }
     input{
+        margin: 2%;
         width: 300px;
     }
     label{

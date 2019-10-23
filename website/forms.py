@@ -17,10 +17,10 @@ class UsuarioForm(LoginForm): #Herda campos de LoginForm
     telefone = forms.CharField(label='Telefone', widget=forms.widgets.NumberInput(), required=True, max_length=15)
 
 class DesafioForm(forms.Form): #Usa uma model para criar campos
-    titulo = forms.CharField(label='Título', required=True, max_length=15)
-    tema = forms.CharField(label='Tema', required=True, max_length=15)
-    valor = forms.CharField(label='Descrição', required=True, max_length=240, widget=forms.widgets.Textarea(attrs={'placeholder':'Deixe a descrição..'}))
+    titulo = forms.CharField(label='', required=True, max_length=15, widget=forms.widgets.TextInput(attrs={'placeholder':'Aqui o título!!!'}))
+    tema = forms.CharField(label='', required=True, max_length=15, widget=forms.widgets.TextInput(attrs={'placeholder':'Qual o tema?!? Do que se trata?!'}))
+    valor = forms.CharField(label='', required=True, max_length=240, widget=forms.widgets.Textarea(attrs={'placeholder':'Descreva seu desafio aqui... '}))
 
 class RespostaForm(forms.Form):
     imagem = forms.ImageField(label='Enviar imagem', widget=forms.widgets.ClearableFileInput)
-    texto =  forms.CharField(max_length=240, widget=forms.widgets.Textarea)
+    texto =  forms.CharField(label='', max_length=240, widget=forms.widgets.Textarea(attrs={'placeholder': 'Sua resposta...'}))
