@@ -109,7 +109,7 @@
                         </a>
                         <p style="margin-left: 3%;">responde...</p>
                     </div>
-                    <p>Resposta: {{ elem.resposta.valor }}</p>
+                    <p>{{ elem.resposta.valor }}</p>
                     <a href="/like/r/{{ perfil }}/{{ elem.resposta.id }}" style="margin: 5% 0 5% 0;">Dar like!!!!</a>
                 {% if elem.likes != 0%}
                 <div style="align-items:center; display: flex; width: 30%; margin: 0 1% 0 60%;">
@@ -118,7 +118,7 @@
                         {{ elem.ultimo.perfil.user }}
                     </a>
                     <p>
-                        e mais {{ elem.likes }} pessoas..
+                        e mais {{ elem.likes }} pessoas deram like..
                     </p>
                 </div>
                 {% endif %}
