@@ -25,14 +25,14 @@
         <div style="display: flex; width: 100%; justify-content: space-around; margin: 5%;">
             <div style="display: flex; flex-direction: column; height: 60px;">
                     <div style="display: flex; align-items: center; margin: 5% 0 0 0;">
-                            <img src="/media/{{ desafio.autor.avatar }}" alt="" width="10%" style="border-radius:50%;">
+                            <img src="/media/{{ desafio.autor.avatar }}" alt="" width="60px" style="border-radius:50%;">
                             <a href="/{{ desafio.autor.user }}" target="_blank" rel="noopener noreferrer" style="margin-left: 1%;">{{ desafio.autor.user }}</a>
                             <p style="margin:0 0 0 1%;">espera que você responda...</p>
                     </div>
                         <h1>{{ desafio.titulo }}</h1>
                         <h2>Tema: {{ desafio.tema }}</h2>
                         <p class="descricao" style="margin: 10%;">{{ desafio.valor }}</p>
-                        <a href="/like/d/{{ perfil }}/{{ desafio.id }}" style="margin: 8% 1% 8% 0; width: 80px;"> Dar like!!!</a> 
+                        <a href="/like/d/{{ perfil }}/{{ desafio.id }}" style="margin: 8% 1% 0 0; width: 80px;"> Dar like!!!</a> 
                         {% if like != False %}
                         <p>
                             <a href="/{{like.perfil.user}}" target="_blank" rel="noopener noreferrer">
@@ -62,7 +62,7 @@
                     </p>
                     {% endif %}
                         <div style="display: flex; align-items: center; margin-right: 60%;">
-                            <img src="/media/{{ desafio.autor.avatar }}" alt="" width="20%" style="border-radius:50%;">
+                            <img src="/media/{{ desafio.autor.avatar }}" alt="" width="80px" style="border-radius:50%;">
                             <a href="/{{ desafio.autor.user }}" target="_blank" rel="noopener noreferrer" style="margin-left:1%;">{{ desafio.autor.user }}</a>
                         </div>
                         <h1>{{ desafio.titulo }}</h1>
