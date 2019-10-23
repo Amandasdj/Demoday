@@ -7,7 +7,7 @@ import os
 
 def cadastrar(request):
 
-    try:
+    # try:
         #Entregar o form como contexto
         form = UsuarioForm()
 
@@ -77,12 +77,12 @@ def login(request):
 
         return render(request, 'index.html', {'login':form})
 
-    except:
+    # except:
 
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
 
 def home(request, id):
-    try:
+    # try:
         perfil = Perfil.objects.filter(id=id, ativo=True).first() #Busca de infos do perfil
         desafios = Desafio.objects.filter(autor=perfil.id, ativo=True) #Busca de desafios criados pelo perfil
         desafios_gerais = Desafio.objects.exclude(autor=perfil.id).filter(ativo=True) #Busca excluindo desafios criados pelo perfil
@@ -215,9 +215,9 @@ def home(request, id):
             }
 
             return render(request, 'home.html', context)
-    except:
+    # except:
 
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
 
 
 #Página de um desafio
@@ -305,7 +305,7 @@ def desafio(request, id, id_desafio):
 
 #Página de um Perfil
 def usuario(request, user):
-    try:
+    # try:
         perfil = Perfil.objects.filter(user=user, ativo=True).first() #Buscar perfil
         respostas = Resposta.objects.filter(autor__user=user, ativo=True) #Buscar respostas do perfil
         desafios = Desafio.objects.filter(autor__user=user, ativo=True) #Buscar desafios criados pelo perfil
@@ -321,13 +321,13 @@ def usuario(request, user):
             }
 
             return render(request, 'usuario.html', context)
-    except:
+    # except:
 
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
 
 #Fazer um like em um desafio
 def like_desafio(request, id, id_desafio):
-    try:
+    # try:
         filtro = Like.objects.filter(correspondente=id_desafio, perfil__id=id).first() #Buscar like já existente
 
         #Verificar se Usuário já deu like
@@ -340,12 +340,12 @@ def like_desafio(request, id, id_desafio):
 
         return redirect('/desafio/{}/{}'.format(id, id_desafio))
     
-    except:
+    # except:
 
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
 
 def like_resposta(request, id, id_resposta):
-    try:
+    # try:
         resposta = Resposta.objects.filter(id=id_resposta, ativo=True).first() #Buscar resposta
         filtro = Like.objects.filter(correspondente=id_resposta, perfil__id=id).first() #Buscar like já existente
 
@@ -358,12 +358,12 @@ def like_resposta(request, id, id_resposta):
     
         return redirect('/desafio/{}/{}'.format(id, resposta.desafio.id))
 
-    except:
+    # except:
 
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
 
 def delete_desafio(request, id, id_desafio):
-    try:
+    # try:
         desafio = Desafio.objects.filter(id=id_desafio, ativo=True).first() #Buscar desafio
 
         #Verificar a existencia do desafio
@@ -374,12 +374,12 @@ def delete_desafio(request, id, id_desafio):
             desafio.save()
 
             return redirect('/home/{}'.format(id))
-    except:
+    # except:
 
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
 
 def avatar(request, id):
-    try:
+    # try:
         if request.method == 'POST':
             perfil = Perfil.objects.filter(id=id).first()
 
@@ -389,6 +389,6 @@ def avatar(request, id):
 
         return redirect('/home/{}'.format(id))
 
-    except:
+    # except:
 
-        return render(request, 'error.html')
+    #     return render(request, 'error.html')
